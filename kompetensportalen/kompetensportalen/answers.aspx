@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset= "utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="text/javascript" src="javascript/menu.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/main.css" />
 	<link rel="stylesheet" href="css/responsiv.css" />
