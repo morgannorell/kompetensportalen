@@ -1,0 +1,112 @@
+﻿@media screen and (max-width: 800px) {
+
+    /* STYLE */
+
+    div.title {
+        max-width: 100%;
+    }
+
+    .footer {
+        max-width: 100%;
+    }
+
+    div.bottom-black {
+        max-width: 100%;
+    }
+
+    /* START */
+
+    div.section {
+        max-width: 100%;
+    }
+
+    div.section p {
+        font-size: 80%;
+    }
+
+    div.arrow {
+	position: absolute; 
+	z-index: 5;
+	margin: -45px 0 0 90%;
+    }
+
+    /* MAIN */
+
+    div.article {
+        max-width: 97%;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    
+    /* MAIN */
+
+    div.title {
+        font-size: 80%;
+        text-align: left;
+        text-indent: 15px;
+    }
+
+    div.article {
+        display: block;
+    }
+
+    div.textfield-left {
+        max-width: 100%;
+        align-content: center;
+        padding: 10px 0 0 0;
+        margin: 0 10px 20px 30px;
+    }
+
+    div.textfield-responsive {
+        max-width: 100%;
+        align-content: center;
+        padding: 0 0 10px 0;
+        margin: 0 10px 20px 30px;
+    }
+
+    div.vr {
+        display: none;
+    }
+
+    /* MENU */
+
+    ul.topnav li {
+        display: none;
+    }
+
+    ul.topnav li.icon {
+        display: inline-block;
+    }
+
+    ul.topnav li a {
+        color: #fff;
+    }
+
+    ul.topnav li.icon a {
+        font-size: 18px;
+    }
+
+    ul.topnav.responsive {
+        position: relative;
+    }
+
+    ul.topnav.responsive li.icon {
+        position: relative;  
+    }
+
+    ul.topnav.responsive li {
+        float: none;
+        display: block;
+        padding: 5px 0;
+        border-bottom: 1px solid #fff;
+    }
+
+    ul.topnav.responsive li a {
+        display: block;
+        text-align: left;
+        color: #fff;
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,56 @@
+﻿div.article {
+    max-width: 800px;
+    min-height: 0;
+    margin: 40px auto;
+    border-radius: 25px;
+    background-color: #fff;
+    display: flex;
+}
+
+div.textfield-left {
+    max-width: 50%;
+    margin: 0 0 0 30px;
+    padding: 5px 0 5px 0;
+}
+
+div.textfield-right {
+    max-width: 50%;
+    padding: 90px 0 0 0;
+    margin: 0 0 0 10px;
+}
+div.login {
+    padding: 60px 0 0 0;
+    margin: 0 0 0 30px;
+}
+div.vr {
+    border-right: solid;
+    border-width: 1px;
+    border-color: #000;
+    margin: 30px 10px 30px 10px;
+
+ }
+/* TEXT */
+
+h2 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+}
+
+a {
+    font-size: 12px;
+}
+
+div.center {
+    text-align: center;
+}
+
+/* IMAGES */
+
+div.leaf-login {
+    position: absolute;
+	z-index: 5;
+	margin: 10px 0 0 10px;
+}
