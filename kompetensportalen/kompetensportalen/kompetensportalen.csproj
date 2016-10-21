@@ -83,6 +83,7 @@
     <Content Include="images\leaf.png" />
     <Content Include="images\support.png" />
     <Content Include="js\menu.js" />
+    <Content Include="laboratorium.aspx" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Morgan.pubxml" />
     <None Include="Web.Debug.config">
@@ -127,6 +128,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="laboratorium.aspx.cs">
+      <DependentUpon>laboratorium.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="laboratorium.aspx.designer.cs">
+      <DependentUpon>laboratorium.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="startcourse.aspx.cs">
