@@ -19,7 +19,7 @@ namespace kompetensportalen.classes
         public postgre()
         {
             _adapt = new NpgsqlDataAdapter();
-            _conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["kp"].ToString());
+            _conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["kp"].ConnectionString);
             _conn.Open();
         }
 
