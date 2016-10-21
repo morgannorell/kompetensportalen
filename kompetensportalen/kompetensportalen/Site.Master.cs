@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace kompetensportalen
 {
-    public partial class answers : System.Web.UI.Page
+    public partial class Site : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
