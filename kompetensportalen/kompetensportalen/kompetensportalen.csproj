@@ -85,6 +85,7 @@
     <Content Include="js\menu.js" />
     <Content Include="laboratorium.aspx" />
     <Content Include="packages.config" />
+    <Content Include="xml\prov.xml" />
     <None Include="Properties\PublishProfiles\Morgan.pubxml" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">

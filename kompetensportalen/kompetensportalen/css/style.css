@@ -58,6 +58,49 @@ div.bottom-black {
 	background-color: #000;	
 }
 
+/*TOOLBOX ITEMS*/
+
+.support-textbox{
+    width: 350px;
+    padding: 10px 10px;
+    font-size: 14px;
+    border-radius:5px;
+    border-color: #62983c;
+    margin-top: 3px;
+    margin-right: 15px;
+}
+
+.support-textbox:last-child{
+    margin-bottom: 25px;
+}
+
+.support-multiline {
+    border-radius: 5px;
+    border-bottom: 2px solid #62983c;
+    border-right: 2px solid #62983c;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-style: solid;
+    margin-top: 3px;
+    margin-left: 8px;
+    width: 300px;
+    height: 200px;
+    padding: 10px 10px;
+}
+
+.support-button{
+    background-color: #62983c;
+    border: 1px solid #62983c;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 240px;
+    margin-top: 15px;
+    font-variant:small-caps;
+    color:white;
+    margin-bottom: 25px;
+
+}
+
 /* TEXT */
 
 div.footer h3 {
@@ -73,6 +116,22 @@ div.footer p {
 	line-height: 0;
 	color: #fff;
 }
+
+.support-label{
+    font-size: 14px;
+    font-variant: small-caps;
+    padding-left: 4px;
+}
+
+.support-label-multiline{
+    font-size: 14px;
+    font-variant: small-caps;
+    padding-left: 4px;
+    margin-left: 8px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
 
 /* NAVIGATION */
 
