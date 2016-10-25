@@ -28,7 +28,7 @@
                     <p><i>Lycka till!!</i></p>
                     <form>                        
                         <p><input type="button" name="Login" value="Tidigare testresultat" />
-                            <input type="button" name="Login" value="Starta testet" /></p>
+                            <input type="button" name="Login" value="Starta testet" onclick="window.location.href='examination.aspx'"/></p>
                     </form>
                 </div>
 			</div>

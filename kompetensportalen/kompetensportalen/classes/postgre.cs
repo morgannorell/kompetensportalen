@@ -9,14 +9,14 @@ using System.Diagnostics;
 
 namespace kompetensportalen.classes
 {
-    public class postgre
+    public class Postgre
 {
         public NpgsqlCommand _cmd;
         public NpgsqlDataReader _dr;
         public NpgsqlConnection _conn;
         public NpgsqlDataAdapter _adapt;
 
-        public postgre()
+        public Postgre()
         {
             _adapt = new NpgsqlDataAdapter();
             _conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["kp"].ConnectionString);

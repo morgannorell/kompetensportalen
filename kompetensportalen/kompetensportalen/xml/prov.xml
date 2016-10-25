@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Prov>
   <Kategori ID="produkt">
-    <Fråga ID="p1">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+    <Fråga ID="p1">Testfråga 1.
+      <Svar>Testsvar 1</Svar>
+      <Svar>Testsvar 2</Svar>
+      <Svar>Testsvar 3</Svar>
+      <Svar>Testsvar 4</Svar>
     </Fråga>
     <Fråga ID="p2">
       <Svar></Svar>

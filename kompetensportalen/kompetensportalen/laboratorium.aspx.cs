@@ -17,7 +17,7 @@ namespace kompetensportalen
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            postgre conn = new postgre();
+            Postgre conn = new Postgre();
 
             conn.test(TextBox1.Text);
 

@@ -75,6 +75,7 @@
     <Content Include="css\responsiv.css" />
     <Content Include="css\start.css" />
     <Content Include="css\style.css" />
+    <Content Include="examination.aspx" />
     <Content Include="faq.aspx" />
     <Content Include="images\arrow.png" />
     <Content Include="images\circle.png" />
@@ -109,13 +110,21 @@
     <Compile Include="admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="classes\postgre.cs" />
+    <Compile Include="classes\Exam.cs" />
+    <Compile Include="classes\Postgre.cs" />
     <Compile Include="course_one.aspx.cs">
       <DependentUpon>course_one.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="course_one.aspx.designer.cs">
       <DependentUpon>course_one.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="examination.aspx.cs">
+      <DependentUpon>examination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="examination.aspx.designer.cs">
+      <DependentUpon>examination.aspx</DependentUpon>
     </Compile>
     <Compile Include="faq.aspx.cs">
       <DependentUpon>faq.aspx</DependentUpon>
@@ -161,6 +170,7 @@
       <DependentUpon>support.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
