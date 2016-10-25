@@ -40,48 +40,48 @@ namespace kompetensportalen {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl question;
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// CheckBoxListAnswers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListAnswers;
         
         /// <summary>
-        /// ans1 control.
+        /// answer1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListItem ans1;
+        protected global::System.Web.UI.WebControls.ListItem answer1;
         
         /// <summary>
-        /// ans2 control.
+        /// answer2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListItem ans2;
+        protected global::System.Web.UI.WebControls.ListItem answer2;
         
         /// <summary>
-        /// ans3 control.
+        /// answer3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListItem ans3;
+        protected global::System.Web.UI.WebControls.ListItem answer3;
         
         /// <summary>
-        /// ans4 control.
+        /// answer4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListItem ans4;
+        protected global::System.Web.UI.WebControls.ListItem answer4;
     }
 }
