@@ -20,7 +20,7 @@ namespace kompetensportalen
             string username = tbxAdminUsername.Text;
             string password = tbxAdminPassword.Text;
 
-            Person admlogin = new Person
+            User admlogin = new User
             {
                 Username = username,
                 Password = password
