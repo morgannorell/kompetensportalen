@@ -22,7 +22,7 @@
                 <div class="vr"></div>
                 <div class="login textfield-responsive">
                     <form runat="server">
-                        <asp:Label ID="lblAdminUsername" CssClass="support-label" runat="server" Text="Användarnamn:"></asp:Label><br />
+                        <asp:Label ID="lblAdminUsername" CssClass="support-label" runat="server" Text="Användarnamnn:"></asp:Label><br />
                         <asp:TextBox ID="tbxAdminUsername" CssClass="support-textbox" runat="server"></asp:TextBox><br /><br />
                         <asp:Label ID="lblAdminPassword" CssClass="support-label" runat="server" Text="Lösenord:"></asp:Label><br />
                         <asp:TextBox ID="tbxAdminPassword" CssClass="support-textbox" runat="server"></asp:TextBox><br /><br />
