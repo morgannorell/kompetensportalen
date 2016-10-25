@@ -36,6 +36,30 @@
         max-width: 97%;
     }
 
+    /*TOOLBOX ITEMS*/
+
+    .support-textbox {
+        width: 90%;
+        /*padding: 10px 10px;
+        font-size: 14px;
+        border-radius:5px;
+        border-color: #62983c;
+        margin-top: 3px;
+        margin-right: 15px;*/
+    }
+
+    .support-button {
+        width: 90%;
+        /*background-color: #62983c;
+        border: 1px solid #62983c;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin-left: 240px;
+        margin-top: 15px;
+        font-variant:small-caps;
+        color:white;
+        margin-bottom: 25px;*/
+    }
 }
 
 @media screen and (max-width: 500px) {

@@ -112,6 +112,7 @@
       <DependentUpon>admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="classes\Exam.cs" />
+    <Compile Include="classes\Person.cs" />
     <Compile Include="classes\Postgre.cs" />
     <Compile Include="course_one.aspx.cs">
       <DependentUpon>course_one.aspx</DependentUpon>
