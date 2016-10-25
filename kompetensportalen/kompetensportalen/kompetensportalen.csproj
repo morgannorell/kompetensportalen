@@ -87,6 +87,7 @@
     <Content Include="js\menu.js" />
     <Content Include="laboratorium.aspx" />
     <Content Include="packages.config" />
+    <Content Include="test.xml" />
     <Content Include="xml\prov.xml" />
     <None Include="Properties\PublishProfiles\Morgan.pubxml" />
     <Content Include="Site.Master" />
@@ -112,7 +113,6 @@
       <DependentUpon>admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="classes\Exam.cs" />
-    <Compile Include="classes\Person.cs" />
     <Compile Include="classes\Postgre.cs" />
     <Compile Include="course_one.aspx.cs">
       <DependentUpon>course_one.aspx</DependentUpon>

@@ -53,29 +53,5 @@ namespace kompetensportalen.classes
                 return null;
             }
         }
-
-        //TESTAR CONNECTION (TEMP)
-        public bool test(string name)
-        {
-            string sql = "insert into test(namn) values(:name)";
-
-            try
-            {
-                _cmd = new NpgsqlCommand(sql, _conn);
-                _cmd.Parameters.Add(new NpgsqlParameter("name", name));
-                if (_cmd.ExecuteNonQuery() == 1)
-                {
-                    return true;
-                }
-                return true;
-            }
-            catch (NpgsqlException e)
-            {
-                Debug.Write(e);
-                return false;
-            }
-            
-        }
-
     }
 }
