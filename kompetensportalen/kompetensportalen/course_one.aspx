@@ -26,9 +26,9 @@
                         kräver flera svar. Detta står då på respektive fråga.</p>
                     <p>Du har 30 minuter på dig att slutföra testet.</p>
                     <p><i>Lycka till!!</i></p>
-                    <form>                        
-                        <p><input type="button" name="Login" value="Tidigare testresultat" />
-                            <input type="button" name="Login" value="Starta testet" onclick="window.location.href='examination.aspx'"/></p>
+                    <form runat="server">                        
+                        <input type="button" name="Login" value="Tidigare testresultat" />
+                        <asp:Button ID="btnStartExam" runat="server" Text="Starta test" OnClick="btnStartExam_Click" />
                     </form>
                 </div>
 			</div>

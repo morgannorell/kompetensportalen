@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using kompetensportalen.classes;
 
 namespace kompetensportalen
 {
@@ -12,6 +13,11 @@ namespace kompetensportalen
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnStartExam_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("examination.aspx");
         }
     }
 }

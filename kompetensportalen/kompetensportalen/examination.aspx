@@ -16,6 +16,7 @@
             <asp:ListItem id="answer3" runat="server"></asp:ListItem>
             <asp:ListItem id="answer4" runat="server"></asp:ListItem>
             </asp:CheckBoxList>
+            <asp:Button ID="btnNext" runat="server" Text="Nästa fråga" OnClick="btnNext_Click" />
         </div>
     </div>
     </form>
