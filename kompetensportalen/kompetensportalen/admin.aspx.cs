@@ -26,7 +26,7 @@ namespace kompetensportalen
                 Password = password
             };
 
-            admlogin.Login();          
+            admlogin.Login();
         }
     }
 }

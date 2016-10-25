@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
 using kompetensportalen.classes;
+using System.Web.UI.HtmlControls;
 
 namespace kompetensportalen
 {
@@ -83,7 +84,15 @@ namespace kompetensportalen
 
         protected void btnNext_Click(object sender, EventArgs e)
         {
+            //    string path = Server.MapPath("/xml/prov.xml");
+            //    XmlDocument doc = new XmlDocument();
+            //    doc.Load(path);
+            HtmlGenericControl div = new HtmlGenericControl("div");
+            div.Attributes.Add("class", "biltext");
 
+            HtmlGenericControl innerdiv = new HtmlGenericControl("div");
+            innerdiv.InnerText = "JAHA";
+            div.Controls.Add(innerdiv);
         }
     }
 }
