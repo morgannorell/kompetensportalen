@@ -23,7 +23,7 @@ namespace kompetensportalen.classes
             _conn.Open();
         }
 
-        public void CheckConnectionStatus()
+        public void OpenConnection()
         {
             if (_conn.State == ConnectionState.Closed)
             {
@@ -74,6 +74,8 @@ namespace kompetensportalen.classes
                 Debug.Write(e);
                 return false;
             }
+            
         }
+
     }
 }

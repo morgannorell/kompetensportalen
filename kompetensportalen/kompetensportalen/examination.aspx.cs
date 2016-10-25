@@ -11,9 +11,13 @@ namespace kompetensportalen
 {
     public partial class examination : System.Web.UI.Page
     {
+
+        Postgre conn = new Postgre();
+        Exam examina = new Exam();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            test();
+            question.InnerText = examina.GetQuestionFromDB();
         }
 
         public void test()
@@ -28,7 +32,7 @@ namespace kompetensportalen
 
             string stringVariable = hmm.ToString();
 
-            question.InnerText = hmm.InnerText;
-        }
+            question.InnerText = hmm.FirstChild.InnerText;
+        }        
     }
 }
