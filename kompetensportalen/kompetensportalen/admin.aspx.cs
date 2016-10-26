@@ -17,16 +17,16 @@ namespace kompetensportalen
 
         protected void btnSendAdmCred_Click(object sender, EventArgs e)
         {
-            string username = tbxAdminUsername.Text;
-            string password = tbxAdminPassword.Text;
+            //string username = tbxAdminUsername.Text;
+            //string password = tbxAdminPassword.Text;
 
-            Person admlogin = new Person
-            {
-                Username = username,
-                Password = password
-            };
+            //Person admlogin = new Person
+            //{
+            //    Username = username,
+            //    Password = password
+            //};
 
-            admlogin.Login();
+            //admlogin.Login();
         }
     }
 }

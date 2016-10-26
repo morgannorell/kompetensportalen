@@ -1,189 +1,308 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Prov>
   <Kategori ID="produkt">
     <Fråga ID="p1">Testfråga 1.
-      <Svar>Testsvar 1</Svar>
-      <Svar>Testsvar 2</Svar>
-      <Svar>Testsvar 3</Svar>
-      <Svar>Testsvar 4</Svar>
-    </Fråga>
+      <Svar>Testsvar 1</Svar><Svar>Testsvar 2</Svar><Svar>Testsvar 3</Svar><Svar>Testsvar 4</Svar></Fråga>
     <Fråga ID="p2">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="p3">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="p4">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="p5">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="p6">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="p7">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="p8">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="p9">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="p10">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
   </Kategori>
   <Kategori ID="ekonomi">
     <Fråga ID="e1">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="e2">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="e3">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="e4">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="e5">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="e6">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="e7">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="e8">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="e9">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="e10">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
   </Kategori>
   <Kategori ID="regler">
     <Fråga ID="r1">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="r2">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="r3">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="r4">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="r5">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="r6">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="r7">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="r8">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="r9">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
     <Fråga ID="r10">
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
-      <Svar></Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
+      <Svar>
+      </Svar>
     </Fråga>
   </Kategori>
+  <Fråga>Test<Svar>Svar1</Svar></Fråga>
+  <Fråga>Test<Svar>Svar1</Svar></Fråga>
+  <Fråga>Test<Svar>Svar1</Svar></Fråga>
+  <Fråga>Test<Svar>Svar1</Svar></Fråga>
+  <Fråga>Test<Svar>Svar1</Svar></Fråga>
+  <Fråga>Test<Svar>Svar1</Svar></Fråga>
+  <Fråga>Vilka grundläggande värderingar och principer bör JE-bankens kontakter med kunder och andra affärsparter präglas av?<Svar>Förtroende, långsiktighet, kompetens och respekt</Svar></Fråga>
 </Prov>

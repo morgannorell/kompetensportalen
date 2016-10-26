@@ -18,7 +18,6 @@ namespace kompetensportalen
         List<string> allAnswers = new List<string>();
         List<ListItem> answers;
         List<int> questionIDs = new List<int>();
-        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,6 +28,7 @@ namespace kompetensportalen
             }
           
             int randomQuestion = RandomQuestionFromDB();
+            Session["RandomQuestion"] = examina.GetQuestionFromDB(randomQuestion);
             question.InnerText = examina.GetQuestionFromDB(randomQuestion);
             allAnswers = examina.GetAnswersFromDB(randomQuestion);
             answers = new List<ListItem> { answer1, answer2, answer3, answer4 };
@@ -84,15 +84,27 @@ namespace kompetensportalen
 
         protected void btnNext_Click(object sender, EventArgs e)
         {
-            //    string path = Server.MapPath("/xml/prov.xml");
-            //    XmlDocument doc = new XmlDocument();
-            //    doc.Load(path);
-            HtmlGenericControl div = new HtmlGenericControl("div");
-            div.Attributes.Add("class", "biltext");
 
-            HtmlGenericControl innerdiv = new HtmlGenericControl("div");
-            innerdiv.InnerText = "JAHA";
-            div.Controls.Add(innerdiv);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(Server.MapPath("xml/prov.xml"));
+
+            XmlNode nodeOne = doc.SelectSingleNode("//Prov");
+
+            XmlDocument docTwo = new XmlDocument();
+            docTwo.LoadXml("<Fråga>" + (string)Session["RandomQuestion"] + "<Svar>"+allAnswers[0]+"</Svar></Fråga>");
+
+            XmlNode nodeTwo = doc.ImportNode(docTwo.FirstChild, true);
+            nodeOne.AppendChild(nodeTwo);
+
+            //XmlElement newElem = doc.CreateElement("Fråga");
+            //newElem.InnerText = (string)Session["RandomQuestion"];
+            //doc.DocumentElement.AppendChild(newElem);
+
+            //XmlWriterSettings settings = new XmlWriterSettings();
+            //settings.Indent = true;
+
+            //XmlWriter writer = XmlWriter.Create(Server.MapPath("xml/prov.xml"), settings);
+            doc.Save(Server.MapPath("xml/prov.xml"));
         }
     }
 }
