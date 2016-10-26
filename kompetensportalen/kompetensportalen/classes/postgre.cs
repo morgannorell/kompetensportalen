@@ -10,7 +10,7 @@ using System.Diagnostics;
 namespace kompetensportalen.classes
 {
     public class Postgre
-{
+    {
         public NpgsqlCommand _cmd;
         public NpgsqlDataReader _dr;
         public NpgsqlConnection _conn;
