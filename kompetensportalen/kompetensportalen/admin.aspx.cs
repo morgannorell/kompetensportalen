@@ -28,7 +28,7 @@ namespace kompetensportalen
                 Password = password
             };
 
-            dt = admlogin.Login(username, password);
+            dt = admlogin.Login();
 
             if(dt != null)
             {

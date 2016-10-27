@@ -54,19 +54,22 @@ namespace kompetensportalen.classes
             }
         }
 
-        public DataTable Select(string sql)
+        public DataTable Select(string sql, Dictionary<string, string> myParams)
         {
             DataTable myTable = new DataTable();
-            string[] myParams = new string[5];
-
-            myParams[0] = "admmono";
-            myParams[1] = "admin";
+            
 
             try
             {
-                //_cmd.Parameters.AddRange(myParams);
                 _cmd = new NpgsqlCommand(sql, _conn);
+
+                foreach (KeyValuePair<string, string> entry in myParams)
+                {
+                    _cmd.Parameters.AddWithValue(entry.Key, entry.Value);
+                }
+
                 _dr = _cmd.ExecuteReader();
+                _conn.Close();
 
                 myTable.Load(_dr);
 
@@ -77,6 +80,11 @@ namespace kompetensportalen.classes
                 Debug.Write(ex);
                 throw;
             }
+        }
+
+        public void SetParameter(string parametername, string parametervalue)
+        {
+            new NpgsqlParameter(parametername, parametervalue);
         }
     }
 }
