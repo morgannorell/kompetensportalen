@@ -14,12 +14,16 @@ namespace kompetensportalen.classes
         public string Username { get; set; }
         public string Password { get; set; }
 
-        public void Login()
+        public DataTable Login(string user, string pwd)
         {
-            string sql = "SELECT * FROM user WHERE username = str AND isadmin = true";
+            Postgre db = new Postgre();
             DataTable dt = new DataTable();
+            
 
-            Postgre ps = new Postgre();
+            string sql = "SELECT * FROM user WHERE username = admmono AND isadmin = true";
+            dt = db.Select(sql);
+
+            return dt;
         }
     }
 }

@@ -12,9 +12,8 @@
                         logga in så använder du ditt tilldelad adnimistrationskonto.
                         Detta konto är inte samma som du använder för att genomföra
                         dina test.</p>
-                    <p>Om du saknar uppgifter så kan
-                        du klicka på supportknappen, då kommer du till sidan där
-                        vi kan hjälpa dig.</p>
+                    <p>Om du saknar uppgifter så kan du klicka på supportknappen. 
+                        Du kommer då till sidan där vi kan hjälpa dig.</p>
                     <p>När du sedan har loggat in så kan du jobba
                         med genomförda prov och se statestik på
                         resultaten.</p>                    

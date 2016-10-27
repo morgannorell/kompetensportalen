@@ -53,5 +53,30 @@ namespace kompetensportalen.classes
                 return null;
             }
         }
+
+        public DataTable Select(string sql)
+        {
+            DataTable myTable = new DataTable();
+            string[] myParams = new string[5];
+
+            myParams[0] = "admmono";
+            myParams[1] = "admin";
+
+            try
+            {
+                //_cmd.Parameters.AddRange(myParams);
+                _cmd = new NpgsqlCommand(sql, _conn);
+                _dr = _cmd.ExecuteReader();
+
+                myTable.Load(_dr);
+
+                return myTable;
+            }
+            catch (NpgsqlException ex)
+            {
+                Debug.Write(ex);
+                throw;
+            }
+        }
     }
 }

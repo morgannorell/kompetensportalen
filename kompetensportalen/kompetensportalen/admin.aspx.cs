@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using kompetensportalen.classes;
+using System.Data;
 
 namespace kompetensportalen
 {
@@ -17,6 +18,7 @@ namespace kompetensportalen
 
         protected void btnSendAdmCred_Click(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
             string username = tbxAdminUsername.Text;
             string password = tbxAdminPassword.Text;
 
@@ -26,7 +28,12 @@ namespace kompetensportalen
                 Password = password
             };
 
-            admlogin.Login();
+            dt = admlogin.Login(username, password);
+
+            if(dt != null)
+            {
+                Response.Redirect("adminstart.aspx");
+            }
         }
     }
 }

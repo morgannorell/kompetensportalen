@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin.aspx" />
+    <Content Include="adminstart.aspx" />
     <Content Include="course_one.aspx" />
     <Content Include="css\main.css" />
     <Content Include="css\responsiv.css" />
@@ -111,6 +112,13 @@
     </Compile>
     <Compile Include="admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminstart.aspx.cs">
+      <DependentUpon>adminstart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminstart.aspx.designer.cs">
+      <DependentUpon>adminstart.aspx</DependentUpon>
     </Compile>
     <Compile Include="classes\Exam.cs" />
     <Compile Include="classes\Postgre.cs" />
