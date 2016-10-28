@@ -19,13 +19,15 @@
                 </div>
                 <div class="vr"></div>
                 <div class="login textfield-responsive">
-                    <form action="course_one.aspx" runat="server">
-                        <p>Användarnamn:<br /><input type="text" name="username" size="21" value="test" /></p>
-                        <p>Lösenord:<br /><input type="password" name="password" size="22" value="test" /></p>
-                        <p><input type="submit" name="Login" value="Logga in" /></p>
-                        <p><a href="support.aspx">Glömt lösenord</a></p>
+                    <form runat="server">
+                        <asp:Label ID="lblUsername" CssClass="login-label" runat="server" Text="Användarnamnn:"></asp:Label><br />
+                        <asp:TextBox ID="tbxUsername" CssClass="login-textbox" runat="server"></asp:TextBox><br /><br />
+                        <asp:Label ID="lblPassword" CssClass="login-label" runat="server" Text="Lösenord:"></asp:Label><br />                        
+                        <asp:TextBox ID="tbxPassword" CssClass="login-textbox" runat="server"></asp:TextBox><br /><br />
+                        <asp:Button ID="btnLogin" CssClass="login-button" runat="server" Text="Logga in" onclick="btnLogin_Click"></asp:Button><br />
+                        <div id="error_login" runat="server"></div>                        
                     </form>
-                </div>
+                </div>                
 			</div>
 </asp:Content>  
 			

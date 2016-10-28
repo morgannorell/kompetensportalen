@@ -101,6 +101,28 @@ div.bottom-black {
 
 }
 
+.support-textbox{
+    width: 300px;
+    padding: 10px 10px;
+    font-size: 14px;
+    border-radius:5px;
+    border-color: #62983c;
+    margin-top: 3px;
+    margin-right: 15px;
+}
+
+.login-button{
+    background-color: #62983c;
+    border: 1px solid #62983c;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-left: 240px;
+    margin-top: 15px;
+    font-variant:small-caps;
+    color:white;
+    margin-bottom: 25px;
+}
+
 /* TEXT */
 
 div.footer h3 {
@@ -117,19 +139,30 @@ div.footer p {
 	color: #fff;
 }
 
-.support-label{
+.support-label {
     font-size: 14px;
     font-variant: small-caps;
     padding-left: 4px;
 }
 
-.support-label-multiline{
+div.error_login {
+    color: red;
+    font-size: 11px;
+}
+
+.support-label-multiline {
     font-size: 14px;
     font-variant: small-caps;
     padding-left: 4px;
     margin-left: 8px;
     margin-top: 50px;
     margin-bottom: 10px;
+}
+
+.login-label {
+    font-size: 12px;
+    font-variant: small-caps;
+    padding: 0 4px;
 }
 
 

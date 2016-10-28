@@ -22,13 +22,13 @@ namespace kompetensportalen
             string username = tbxAdminUsername.Text;
             string password = tbxAdminPassword.Text;
 
-            User admlogin = new User
+            User login = new User
             {
                 Username = username,
                 Password = password
             };
 
-            dt = admlogin.Login();
+            dt = login.AdmLogin();
 
             if(dt != null)
             {
