@@ -90,6 +90,7 @@
     <Content Include="packages.config" />
     <Content Include="test.xml" />
     <Content Include="xml\prov.xml" />
+    <Content Include="xml\XMLFile1.xml" />
     <None Include="Properties\PublishProfiles\Morgan.pubxml" />
     <Content Include="Site.Master" />
     <None Include="Web.Debug.config">

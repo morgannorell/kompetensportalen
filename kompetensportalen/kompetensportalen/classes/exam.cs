@@ -111,8 +111,7 @@ namespace kompetensportalen.classes
             finally
             {
                 conn.CloseConnection();
-            }
-            
+            }            
         }
     }
 }
