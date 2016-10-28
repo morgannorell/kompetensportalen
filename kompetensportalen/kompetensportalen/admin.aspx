@@ -23,13 +23,11 @@
                     <form runat="server">
                         <asp:Label ID="lblAdminUsername" CssClass="support-label" runat="server" Text="Användarnamnn:"></asp:Label><br />
                         <asp:TextBox ID="tbxAdminUsername" CssClass="support-textbox" runat="server"></asp:TextBox><br /><br />
-                        <asp:Label ID="lblAdminPassword" CssClass="support-label" runat="server" Text="Lösenord:"></asp:Label><br />
+                        <asp:Label ID="lblAdminPassword" CssClass="support-label" runat="server" Text="Lösenord:"></asp:Label><br />                        
                         <asp:TextBox ID="tbxAdminPassword" CssClass="support-textbox" runat="server"></asp:TextBox><br /><br />
-                        <asp:Button ID="btnSendAdmCred" CssClass="support-button" runat="server" Text="Logga in" OnClick="btnSendAdmCred_Click" />
-                        <p>Användarnamn:<br /><input type="text" name="username" size="21" value="test" /></p>
-                        <p>Lösenord:<br /><input type="password" name="password" size="22" value="test" /></p>
-                        <p><input type="submit" name="Login" value="Logga in" /></p>
-                        <p><a href="support.aspx">Glömt lösenord</a></p>
+                        <asp:Button ID="btnSendAdmCred" CssClass="support-button" runat="server" Text="Logga in" OnClick="btnSendAdmCred_Click"></asp:Button>
+                        <p></p><div id="error_login" runat="server"></div>                        
+                        <p><a href="support.aspx">Glömt lösenord</a></p>                        
                     </form>
                 </div>
 			</div>

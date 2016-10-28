@@ -33,8 +33,6 @@ namespace kompetensportalen.classes
 
             dt = db.Select(sql ,myParams);
 
-            db.CloseConnection();
-
             return dt;
         }
     }

@@ -32,7 +32,15 @@ namespace kompetensportalen
 
             if(dt != null)
             {
-                Response.Redirect("adminstart.aspx");
+                if (dt.Rows.Count > 0)
+                {
+                    Session["login"] = "admin";
+                    Response.Redirect("adminstart.aspx");
+                }
+                else
+                {
+                    error_login.InnerText = "Fel lösenord eller användarnamn.";
+                }
             }
         }
     }

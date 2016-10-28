@@ -56,21 +56,16 @@ namespace kompetensportalen.classes
 
         public DataTable Select(string sql, Dictionary<string, string> myParams)
         {
-            DataTable myTable = new DataTable();
-            
-
+            DataTable myTable = new DataTable();           
             try
             {
                 _cmd = new NpgsqlCommand(sql, _conn);
-
                 foreach (KeyValuePair<string, string> entry in myParams)
                 {
                     _cmd.Parameters.AddWithValue(entry.Key, entry.Value);
                 }
 
                 _dr = _cmd.ExecuteReader();
-                _conn.Close();
-
                 myTable.Load(_dr);
 
                 return myTable;
@@ -79,6 +74,10 @@ namespace kompetensportalen.classes
             {
                 Debug.Write(ex);
                 throw;
+            }
+            finally
+            {
+                CloseConnection();
             }
         }
 
