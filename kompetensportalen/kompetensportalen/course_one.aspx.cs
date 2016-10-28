@@ -12,7 +12,10 @@ namespace kompetensportalen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session.SessionID == "admin" || Session.SessionID == "noadmin")
+            {
+                Response.Redirect("index.aspx");
+            }
         }
 
         protected void btnStartExam_Click(object sender, EventArgs e)

@@ -11,7 +11,7 @@ namespace kompetensportalen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            myDiv.InnerHtml = "From code behind. Din session är: " + Session["login"];
+            myDiv.InnerHtml = "From code behind. Din session är: " + Session["login"] + " " + Session.SessionID;
         }
     }
 }
