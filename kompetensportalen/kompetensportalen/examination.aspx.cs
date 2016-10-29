@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Xml;
 using kompetensportalen.classes;
 using System.Web.UI.HtmlControls;
+using System.Data;
 
 namespace kompetensportalen
 {
@@ -30,6 +31,7 @@ namespace kompetensportalen
             }
 
             int randomQuestion = RandomQuestionFromDB();
+            Session["rqID"] = randomQuestion;
             Session["RandomQuestion"] = examina.GetQuestionFromDB(randomQuestion);
             question.InnerText = examina.GetQuestionFromDB(randomQuestion);
             allAnswers = examina.GetAnswersFromDB(randomQuestion);          
@@ -62,10 +64,10 @@ namespace kompetensportalen
                 int index = random.Next(list.Count);
                 id = list[index];
                 list.RemoveAt(index);
-                
             }
             return id;
-        }
+        }                
+
 
 
         //EVENTS
@@ -88,6 +90,23 @@ namespace kompetensportalen
         protected void btnNext_Click(object sender, EventArgs e)
         {
             //Hitta rätt svarselement och ange ett attribut som indikerar att det är rätt svar.
+            Exam xam = new Exam();
+
+            foreach (ListItem item in CheckBoxListAnswers.Items)
+            {
+                foreach (var test in allAnswers)
+                {
+                    test.
+                }
+
+                if (allAnswers. == xam.GetCorrectAnswerTemp((int)Session["rqID"]))
+                {
+                    
+                }
+            }
+            
+            
+
         }
 
     }
