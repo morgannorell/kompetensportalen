@@ -13,14 +13,17 @@ namespace kompetensportalen.classes
         
 
         public string question { get; set; }
+        public int questionID { get; set; }
         public string answer { get; set; }
+        public int answerID { get; set; }
+        public bool correctAnswer { get; set; }
+        public int correctAnswerID { get; set; }
 
         public string GetQuestionFromDB(int question_id)
         {
             Postgre conn = new Postgre();
             
             string sql = "SELECT * FROM exam WHERE question_id=:question_id";
-            string question = null;
 
             try
             {
@@ -30,8 +33,7 @@ namespace kompetensportalen.classes
 
                 while(conn._dr.Read())
                 {
-                    string quest = conn._dr["question"].ToString();
-                    question = quest;
+                    question = conn._dr["question"] as string ?? "";
                 }
                 return question;
             }
@@ -63,7 +65,7 @@ namespace kompetensportalen.classes
 
                 while(conn._dr.Read())
                 {
-                    answer = conn._dr["answer"] as string ?? "";
+                    answer = conn._dr["answer"] as string ?? "";                  
                     answers.Add(answer);
                 }
                 return answers;
@@ -115,23 +117,23 @@ namespace kompetensportalen.classes
             }            
         }
 
-        public int GetCorrectAnswerTemp(int question)
+        public string GetCorrectAnswerTemp(int question)
         {
             Postgre conn = new Postgre();
 
-            string sql = "select * from exam e, answers a where e.correct_answer = a.answer_id and question_id = '@question'";
-            int id = 0;
+            string sql = "select * from answers a where a.question = @question and a.correct = true";
 
             try
             {
                 conn._cmd = new NpgsqlCommand(sql, conn._conn);
+                conn._cmd.Parameters.AddWithValue("question", question);
                 conn._dr = conn._cmd.ExecuteReader();
 
                 while (conn._dr.Read())
                 {
-                    id = conn._dr["question_id"] as int? ?? default(int);
+                    answer = conn._dr["answer"] as string ?? "";
                 }
-                return id;
+                return answer;
             }
             catch (Exception e)
             {

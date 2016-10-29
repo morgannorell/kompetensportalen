@@ -19,6 +19,7 @@ namespace kompetensportalen
         List<string> allAnswers = new List<string>();
         List<ListItem> answers;
         List<int> questionIDs = new List<int>();
+        private Boolean IsPageRefresh = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,21 +28,42 @@ namespace kompetensportalen
             if (!IsPostBack)
             {
                 questionIDs = examina.GetQuestionIDs();
-                Session["test"] = questionIDs;           
+                Session["questionIDs"] = questionIDs;
+                int randomQuestion = RandomQuestionFromDB();
+                question.InnerText = examina.GetQuestionFromDB(randomQuestion);
+                allAnswers = examina.GetAnswersFromDB(randomQuestion);
+
+                if (randomQuestion > 0)
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        ListItem answerPos = RandomAnswerPosition();
+                        answerPos.Text = allAnswers[i];
+                    }
+                }
+            }
+            else
+            {
+                int randomQuestion = RandomQuestionFromDB();
+                Session["rqID"] = randomQuestion;
+                Session["RandomQuestion"] = examina.GetQuestionFromDB(randomQuestion);
+                question.InnerText = examina.GetQuestionFromDB(randomQuestion);
+                allAnswers = examina.GetAnswersFromDB(randomQuestion);
+
+                if (randomQuestion > 0)
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        ListItem answerPos = RandomAnswerPosition();
+                        answerPos.Text = allAnswers[i];
+                    }
+                }
             }
 
-            int randomQuestion = RandomQuestionFromDB();
-            Session["rqID"] = randomQuestion;
-            Session["RandomQuestion"] = examina.GetQuestionFromDB(randomQuestion);
-            question.InnerText = examina.GetQuestionFromDB(randomQuestion);
-            allAnswers = examina.GetAnswersFromDB(randomQuestion);          
+                    
 
-            if (randomQuestion > 0)
-            for (int i = 0; i < 4; i++)
-            {
-                ListItem answerPos = RandomAnswerPosition();
-                answerPos.Text = allAnswers[i];
-            }            
+            
+                      
         }  
         
         //METHODS
@@ -56,7 +78,7 @@ namespace kompetensportalen
         
         public int RandomQuestionFromDB()
         {
-            var list = (List<int>)Session["test"];
+            var list = (List<int>)Session["questionIDs"];
             int id = 0;
             if (list.Count > 0)
             {
@@ -67,8 +89,6 @@ namespace kompetensportalen
             }
             return id;
         }                
-
-
 
         //EVENTS
         protected void btnNext_Load(object sender, EventArgs e)
@@ -94,20 +114,20 @@ namespace kompetensportalen
 
             foreach (ListItem item in CheckBoxListAnswers.Items)
             {
-                foreach (var test in allAnswers)
+                if (item.Selected == true && item.Text == xam.GetCorrectAnswerTemp((int)Session["rqID"]))
                 {
-                    test.
+                    error_login.InnerText = "Rätt svar!";
+                    break;
                 }
-
-                if (allAnswers. == xam.GetCorrectAnswerTemp((int)Session["rqID"]))
+                else
                 {
-                    
+                    error_login.InnerText = "Fel svar!";
                 }
             }
-            
-            
 
+            CheckBoxListAnswers.ClearSelection();
         }
+
 
     }
 }

@@ -17,6 +17,7 @@
             <asp:ListItem id="answer4" runat="server"></asp:ListItem>
             </asp:CheckBoxList>
             <asp:Button ID="btnNext" runat="server" Text="Nästa fråga" OnLoad="btnNext_Load" OnClick="btnNext_Click"/>
+            <div id="error_login" runat="server"></div> 
         </div>
     </div>
     </form>
