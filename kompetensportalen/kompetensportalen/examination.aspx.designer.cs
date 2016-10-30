@@ -40,6 +40,15 @@ namespace kompetensportalen {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl question;
         
         /// <summary>
+        /// hr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl hr;
+        
+        /// <summary>
         /// CheckBoxListAnswers control.
         /// </summary>
         /// <remarks>
@@ -92,6 +101,15 @@ namespace kompetensportalen {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNext;
+        
+        /// <summary>
+        /// btnStart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnStart;
         
         /// <summary>
         /// error_login control.

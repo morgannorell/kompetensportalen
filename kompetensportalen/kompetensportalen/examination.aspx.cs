@@ -19,7 +19,6 @@ namespace kompetensportalen
         List<string> allAnswers = new List<string>();
         List<ListItem> answers;
         List<int> questionIDs = new List<int>();
-        private Boolean IsPageRefresh = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,42 +28,41 @@ namespace kompetensportalen
             {
                 questionIDs = examina.GetQuestionIDs();
                 Session["questionIDs"] = questionIDs;
-                int randomQuestion = RandomQuestionFromDB();
-                question.InnerText = examina.GetQuestionFromDB(randomQuestion);
-                allAnswers = examina.GetAnswersFromDB(randomQuestion);
 
-                if (randomQuestion > 0)
-                {
-                    for (int i = 0; i < 4; i++)
-                    {
-                        ListItem answerPos = RandomAnswerPosition();
-                        answerPos.Text = allAnswers[i];
-                    }
-                }
+                qnbr.Visible = false;
+                CheckBoxListAnswers.Visible = false;
+                hr.Visible = false;
+                btnNext.Visible = false;
+                btnStart.Visible = true;
             }
             else
             {
-                int randomQuestion = RandomQuestionFromDB();
-                Session["rqID"] = randomQuestion;
-                Session["RandomQuestion"] = examina.GetQuestionFromDB(randomQuestion);
-                question.InnerText = examina.GetQuestionFromDB(randomQuestion);
-                allAnswers = examina.GetAnswersFromDB(randomQuestion);
+                qnbr.Visible = true;
+                CheckBoxListAnswers.Visible = true;
+                hr.Visible = true;
+                btnNext.Visible = true;
+                btnStart.Visible = false;
+            }                             
+        }  
 
-                if (randomQuestion > 0)
+        public void Test()
+        {
+            int randomQuestion = RandomQuestionFromDB();
+            Session["rqID"] = randomQuestion;
+            Session["RandomQuestion"] = examina.GetQuestionFromDB(randomQuestion);
+            question.InnerText = examina.GetQuestionFromDB(randomQuestion);
+            allAnswers = examina.GetAnswersFromDB(randomQuestion);
+
+            if (randomQuestion > 0)
+            {
+                for (int i = 0; i < 4; i++)
                 {
-                    for (int i = 0; i < 4; i++)
-                    {
-                        ListItem answerPos = RandomAnswerPosition();
-                        answerPos.Text = allAnswers[i];
-                    }
+                    ListItem answerPos = RandomAnswerPosition();
+                    answerPos.Text = allAnswers[i];
+                    Session["" + i + ""] = allAnswers[i];
                 }
             }
-
-                    
-
-            
-                      
-        }  
+        }
         
         //METHODS
         public ListItem RandomAnswerPosition()
@@ -93,24 +91,26 @@ namespace kompetensportalen
         //EVENTS
         protected void btnNext_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void btnNext_Click(object sender, EventArgs e)
+        {
+            Exam xam = new Exam();
+
             XmlDocument doc = new XmlDocument();
             doc.Load(Server.MapPath("xml/prov.xml"));
 
             XmlNode nodeOne = doc.SelectSingleNode("//Prov/Kategori[@ ID='ekonomi']");
 
             XmlDocument docTwo = new XmlDocument();
-            docTwo.LoadXml("<Fråga>" + (string)Session["RandomQuestion"] + "<Svar>" + allAnswers[0] + "</Svar><Svar>" + allAnswers[1] + "</Svar><Svar>" + allAnswers[2] + "</Svar><Svar>" + allAnswers[3] + "</Svar></Fråga>");
+            docTwo.LoadXml("<Fråga>" + (string)Session["RandomQuestion"] + "<Svar>" + Session["0"] + "</Svar><Svar>" + Session["1"] + "</Svar><Svar>" + Session["2"] + "</Svar><Svar>" + Session["3"] + "</Svar><RättSvar>" + xam.GetCorrectAnswerTemp((int)Session["rqID"]) + "</RättSvar></Fråga>");
 
             XmlNode nodeTwo = doc.ImportNode(docTwo.FirstChild, true);
             nodeOne.AppendChild(nodeTwo);
 
             doc.Save(Server.MapPath("xml/prov.xml"));
-        }
 
-        protected void btnNext_Click(object sender, EventArgs e)
-        {
-            //Hitta rätt svarselement och ange ett attribut som indikerar att det är rätt svar.
-            Exam xam = new Exam();
 
             foreach (ListItem item in CheckBoxListAnswers.Items)
             {
@@ -126,8 +126,15 @@ namespace kompetensportalen
             }
 
             CheckBoxListAnswers.ClearSelection();
+
+            Test();
+
+            //Response.Redirect(HttpContext.Current.Request.Path);
         }
 
-
+        protected void btnStart_Click(object sender, EventArgs e)
+        {
+            Test();
+        }
     }
 }
