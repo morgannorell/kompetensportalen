@@ -43,7 +43,7 @@ div.exam-question{
 
 div.exam-answers{
     max-width: 100%;
-    padding: 25px;
+    padding: 25px 125px;
     margin: 0 auto;
 
 }

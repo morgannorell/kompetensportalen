@@ -77,6 +77,7 @@
     <Content Include="css\responsiv.css" />
     <Content Include="css\start.css" />
     <Content Include="css\style.css" />
+    <Content Include="examDone.aspx" />
     <Content Include="examination.aspx" />
     <Content Include="faq.aspx" />
     <Content Include="images\arrow.png" />
@@ -86,6 +87,7 @@
     <Content Include="images\leaf.png" />
     <Content Include="images\support.png" />
     <Content Include="js\menu.js" />
+    <Content Include="js\timer.js" />
     <Content Include="laboratorium.aspx" />
     <Content Include="packages.config" />
     <Content Include="test.xml" />
@@ -130,6 +132,13 @@
     </Compile>
     <Compile Include="course_one.aspx.designer.cs">
       <DependentUpon>course_one.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="examDone.aspx.cs">
+      <DependentUpon>examDone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="examDone.aspx.designer.cs">
+      <DependentUpon>examDone.aspx</DependentUpon>
     </Compile>
     <Compile Include="examination.aspx.cs">
       <DependentUpon>examination.aspx</DependentUpon>

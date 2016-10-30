@@ -90,7 +90,7 @@ namespace kompetensportalen.classes
         {
             Postgre conn = new Postgre();
 
-            string sql = "SELECT question_id FROM exam";
+            string sql = "select question_id from exam order by random() limit 25";
             List<int> ids = new List<int>();
             int id = 0;
 

@@ -19,6 +19,8 @@ namespace kompetensportalen
         List<string> allAnswers = new List<string>();
         List<ListItem> answers;
         List<int> questionIDs = new List<int>();
+        Timer timerExam;
+        int counter = 1800;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,6 +44,16 @@ namespace kompetensportalen
                 hr.Visible = true;
                 btnNext.Visible = true;
                 btnStart.Visible = false;
+
+                List<int> remainingQuestions = new List<int>();
+                remainingQuestions = (List<int>)Session["questionIDs"];
+
+                if (remainingQuestions.Count <= 0)
+                {
+                    //System.Threading.Thread.Sleep(10000);
+                    Response.Redirect("examDone.aspx");
+                    //Response.Write("<script>alert('Du har svarat på samtliga frågor!');</script>");
+                }
             }                             
         }
 
@@ -155,9 +167,12 @@ namespace kompetensportalen
             GetNewQuestionAndAnswers();
         }
 
+
         protected void btnStart_Click(object sender, EventArgs e)
         {
             GetNewQuestionAndAnswers();
         }
+
+        
     }
 }
