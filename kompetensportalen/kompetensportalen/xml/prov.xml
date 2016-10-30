@@ -203,6 +203,9 @@
       <Svar>
       </Svar>
     </Fråga>
+    <Fråga>Test<Svar>Svar1</Svar><Svar>Svar2</Svar><Svar>Svar3</Svar><Svar>Svar4</Svar><RättSvar>Svar2</RättSvar><MarkeratSvar>Svar3</MarkeratSvar></Fråga>
+    <Fråga>Vilka grundläggande värderingar och principer bör JE-bankens kontakter med kunder och andra affärsparter präglas av?<Svar>Förtroende, långsiktighet, kompetens och respekt</Svar><Svar>Ödmjukhet, respekt, långsiktighet och förtroende</Svar><Svar>Framåtanda, öppenhet, pålilighet och långsiktighet</Svar><Svar>Respekt, pålitlighet, kompetens och framåtanda</Svar><RättSvar>Förtroende, långsiktighet, kompetens och respekt</RättSvar><MarkeratSvar>Förtroende, långsiktighet, kompetens och respekt</MarkeratSvar></Fråga>
+    <Fråga>Test<Svar>Svar1</Svar><Svar>Svar2</Svar><Svar>Svar3</Svar><Svar>Svar4</Svar><RättSvar>Svar2</RättSvar><MarkeratSvar>Svar3</MarkeratSvar></Fråga>
   </Kategori>
   <Kategori ID="regler">
     <Fråga ID="r1">

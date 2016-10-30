@@ -43,9 +43,12 @@ namespace kompetensportalen
                 btnNext.Visible = true;
                 btnStart.Visible = false;
             }                             
-        }  
+        }
 
-        public void Test()
+
+
+        //METHODS
+        public void GetNewQuestionAndAnswers()
         {
             int randomQuestion = RandomQuestionFromDB();
             Session["rqID"] = randomQuestion;
@@ -63,8 +66,7 @@ namespace kompetensportalen
                 }
             }
         }
-        
-        //METHODS
+
         public ListItem RandomAnswerPosition()
         {            
             Random random = new Random();
@@ -89,52 +91,73 @@ namespace kompetensportalen
         }                
 
         //EVENTS
-        protected void btnNext_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         protected void btnNext_Click(object sender, EventArgs e)
         {
             Exam xam = new Exam();
+            string selectedAnswer = "";
+            int countNoSelections = 0;
+            int countToManySelected = 0;
+            bool correctAmountSelected = false;
 
             XmlDocument doc = new XmlDocument();
             doc.Load(Server.MapPath("xml/prov.xml"));
 
             XmlNode nodeOne = doc.SelectSingleNode("//Prov/Kategori[@ ID='ekonomi']");
 
+            foreach (ListItem item in CheckBoxListAnswers.Items)
+            {
+                if(item.Selected == true)
+                {
+                    countToManySelected++;
+                    if (countToManySelected > 1)
+                    {
+                        Response.Write("<script>alert('Du har markerat för många svar! Markera endast ett svar, tack.');</script>");
+                        return;
+                    }
+                    else
+                    {
+                        correctAmountSelected = item.Selected;
+                    }
+                }
+            }
+
+            foreach (ListItem item in CheckBoxListAnswers.Items)
+            {
+                countNoSelections++;
+
+                if (correctAmountSelected == true && item.Text == xam.GetCorrectAnswerTemp((int)Session["rqID"]))
+                {
+                    selectedAnswer = item.Text;
+                    break;
+                }
+                else if (correctAmountSelected == true && item.Text != xam.GetCorrectAnswerTemp((int)Session["rqID"]))
+                {
+                    selectedAnswer = item.Text;
+                    break;
+                }
+                else if (countNoSelections >= 4)
+                {
+                    Response.Write("<script>alert('Markera ett svar!');</script>");
+                    return;
+                }
+            }
+
             XmlDocument docTwo = new XmlDocument();
-            docTwo.LoadXml("<Fråga>" + (string)Session["RandomQuestion"] + "<Svar>" + Session["0"] + "</Svar><Svar>" + Session["1"] + "</Svar><Svar>" + Session["2"] + "</Svar><Svar>" + Session["3"] + "</Svar><RättSvar>" + xam.GetCorrectAnswerTemp((int)Session["rqID"]) + "</RättSvar></Fråga>");
+            docTwo.LoadXml("<Fråga>" + (string)Session["RandomQuestion"] + "<Svar>" + Session["0"] + "</Svar><Svar>" + Session["1"] + "</Svar><Svar>" + Session["2"] + "</Svar><Svar>" + Session["3"] + "</Svar><RättSvar>" + xam.GetCorrectAnswerTemp((int)Session["rqID"]) + "</RättSvar><MarkeratSvar>"+selectedAnswer+"</MarkeratSvar></Fråga>");
 
             XmlNode nodeTwo = doc.ImportNode(docTwo.FirstChild, true);
             nodeOne.AppendChild(nodeTwo);
 
             doc.Save(Server.MapPath("xml/prov.xml"));
 
-
-            foreach (ListItem item in CheckBoxListAnswers.Items)
-            {
-                if (item.Selected == true && item.Text == xam.GetCorrectAnswerTemp((int)Session["rqID"]))
-                {
-                    error_login.InnerText = "Rätt svar!";
-                    break;
-                }
-                else
-                {
-                    error_login.InnerText = "Fel svar!";
-                }
-            }
-
             CheckBoxListAnswers.ClearSelection();
 
-            Test();
-
-            //Response.Redirect(HttpContext.Current.Request.Path);
+            GetNewQuestionAndAnswers();
         }
 
         protected void btnStart_Click(object sender, EventArgs e)
         {
-            Test();
+            GetNewQuestionAndAnswers();
         }
     }
 }
