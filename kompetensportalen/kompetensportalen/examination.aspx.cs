@@ -171,6 +171,8 @@ namespace kompetensportalen
         protected void btnStart_Click(object sender, EventArgs e)
         {
             GetNewQuestionAndAnswers();
+            //Page.ClientScript.RegisterStartupScript(this.GetType(), "js/timer.js", "initializeClock('clockdiv', deadline)", true);
+            //ScriptManager.RegisterStartupScript(this, GetType(), "initializeClock", "timer.start()", true);
         }
 
         

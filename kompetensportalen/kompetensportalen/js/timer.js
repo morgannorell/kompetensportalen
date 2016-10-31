@@ -1,32 +1,16 @@
-﻿var deadline = '2016-12-31';
+﻿var countdown = 30 * 60 * 1000;
+var timerId = setInterval(function () {
+    countdown -= 1000;
+    var min = Math.floor(countdown / (60 * 1000));
+    var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);
+    var result = min + " : " + sec;
+    document.getElementById('countdownTimer').innerHTML = result;
 
-function getTimeRemaining(endtime) {
-    var t = Date.parse(endtime) - Date.parse(new Date());
-    var seconds = Math.floor((t / 1000) % 60);
-    var minutes = Math.floor((t / 1000 / 60) % 60);
-    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-    var days = Math.floor(t / (1000 * 60 * 60 * 24));
-    return {
-        'total': t,
-        'days': days,
-        'hours': hours,
-        'minutes': minutes,
-        'seconds': seconds
-    };
-}
-
-function initializeClock(id, endtime) {
-    var clock = document.getElementById(id);
-    var timeinterval = setInterval(function () {
-        var t = getTimeRemaining(endtime);
-        clock.innerHTML = 'days: ' + t.days + '<br>' +
-                          'hours: ' + t.hours + '<br>' +
-                          'minutes: ' + t.minutes + '<br>' +
-                          'seconds: ' + t.seconds;
-        if (t.total <= 0) {
-            clearInterval(timeinterval);
-        }
-    }, 1000);
-}
-
-
+    if (countdown <= 0) {
+        alert("30 min!");
+        clearInterval(timerId);
+        //doSomething();
+    } else {
+        $("#countTime").html(min + " : " + sec);
+    }
+}, 1000);
