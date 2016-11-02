@@ -19,8 +19,6 @@ namespace kompetensportalen
         List<string> allAnswers = new List<string>();
         List<ListItem> answers;
         List<int> questionIDs = new List<int>();
-        Timer timerExam;
-        int counter = 1800;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -100,8 +98,8 @@ namespace kompetensportalen
                 list.RemoveAt(index);
             }
             return id;
-        }                
-
+        }
+        static int questionCounter = 0;
         //EVENTS
         protected void btnNext_Click(object sender, EventArgs e)
         {
@@ -110,6 +108,7 @@ namespace kompetensportalen
             int countNoSelections = 0;
             int countToManySelected = 0;
             bool correctAmountSelected = false;
+            questionCounter++;
 
             XmlDocument doc = new XmlDocument();
             doc.Load(Server.MapPath("xml/prov.xml"));
@@ -162,6 +161,14 @@ namespace kompetensportalen
 
             doc.Save(Server.MapPath("xml/prov.xml"));
 
+            if (questionCounter == 25)
+            {
+                string xmlstring = doc.OuterXml;
+                int userid = 1;
+                //Skicka in userid med annat värde...
+                xam.xmlToDb(xmlstring, userid);
+            }
+
             CheckBoxListAnswers.ClearSelection();
 
             GetNewQuestionAndAnswers();
@@ -172,7 +179,7 @@ namespace kompetensportalen
         {
             GetNewQuestionAndAnswers();
             //Page.ClientScript.RegisterStartupScript(this.GetType(), "js/timer.js", "initializeClock('clockdiv', deadline)", true);
-            //ScriptManager.RegisterStartupScript(this, GetType(), "initializeClock", "timer.start()", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "initializeClock", "initializeClock('clockdiv', deadline);", true);
         }
 
         
