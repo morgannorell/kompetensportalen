@@ -1,15 +1,15 @@
-﻿var countdown = 30 * 60 * 1000;
+﻿var countdown = 5 * 60 * 1000;
 var timerId = setInterval(function () {
     countdown -= 1000;
     var min = Math.floor(countdown / (60 * 1000));
     var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);
-    var result = min + " : " + sec;
+    var result = ('0' + min).slice(-2) + " : " + ('0' + sec).slice(-2);
     document.getElementById('countdownTimer').innerHTML = result;
 
     if (countdown <= 0) {
         alert("30 min!");
         clearInterval(timerId);
-        //doSomething();
+        window.location.replace("examFail.aspx");
     } else {
         $("#countTime").html(min + " : " + sec);
     }

@@ -78,6 +78,7 @@
     <Content Include="css\start.css" />
     <Content Include="css\style.css" />
     <Content Include="examDone.aspx" />
+    <Content Include="examFail.aspx" />
     <Content Include="examination.aspx" />
     <Content Include="faq.aspx" />
     <Content Include="images\arrow.png" />
@@ -139,6 +140,13 @@
     </Compile>
     <Compile Include="examDone.aspx.designer.cs">
       <DependentUpon>examDone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="examFail.aspx.cs">
+      <DependentUpon>examFail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="examFail.aspx.designer.cs">
+      <DependentUpon>examFail.aspx</DependentUpon>
     </Compile>
     <Compile Include="examination.aspx.cs">
       <DependentUpon>examination.aspx</DependentUpon>
