@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
+using Npgsql;
+using System.Diagnostics;
 
 namespace kompetensportalen.classes
 {
@@ -60,6 +62,35 @@ namespace kompetensportalen.classes
             return dt;
         }
 
+        public bool GetLicenseApproved(string username)
+        {
+            Postgre conn = new Postgre();
+
+            string sql = "select * from person where username = @username";
+            bool approved = false;
+
+            try
+            {
+                conn._cmd = new NpgsqlCommand(sql, conn._conn);
+                conn._cmd.Parameters.AddWithValue("username", username);
+                conn._dr = conn._cmd.ExecuteReader();
+
+                while (conn._dr.Read())
+                {
+                    approved = conn._dr["licensed"] as bool? ?? default(bool);
+                }
+                return approved;
+            }
+            catch (Exception e)
+            {
+                Debug.Write(e);
+                return false;
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+        }
 
     }
 }

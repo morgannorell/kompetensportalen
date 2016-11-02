@@ -8,6 +8,7 @@ using System.Xml;
 using kompetensportalen.classes;
 using System.Web.UI.HtmlControls;
 using System.Data;
+using System.Xml.Linq;
 
 namespace kompetensportalen
 {
@@ -26,8 +27,21 @@ namespace kompetensportalen
 
             if (!IsPostBack)
             {
-                questionIDs = examina.GetQuestionIDs();
-                Session["questionIDs"] = questionIDs;
+                User user = new classes.User();
+
+                bool whichQuestions = user.GetLicenseApproved((string)Session["username"]);
+                if (whichQuestions == true )
+                {
+                    int getExam = 1;
+                    questionIDs = examina.GetQuestionIDs(getExam);
+                    Session["questionIDs"] = questionIDs;
+                }
+                else
+                {
+                    int getExam = 2;
+                    questionIDs = examina.GetQuestionIDs(getExam);
+                    Session["questionIDs"] = questionIDs;
+                }
 
                 qnbr.Visible = false;
                 CheckBoxListAnswers.Visible = false;
@@ -42,16 +56,6 @@ namespace kompetensportalen
                 hr.Visible = true;
                 btnNext.Visible = true;
                 btnStart.Visible = false;
-
-                List<int> remainingQuestions = new List<int>();
-                remainingQuestions = (List<int>)Session["questionIDs"];
-
-                if (remainingQuestions.Count <= 0)
-                {
-                    //System.Threading.Thread.Sleep(10000);
-                    Response.Redirect("examDone.aspx");
-                    //Response.Write("<script>alert('Du har svarat på samtliga frågor!');</script>");
-                }
             }                             
         }
 
@@ -113,7 +117,7 @@ namespace kompetensportalen
             XmlDocument doc = new XmlDocument();
             doc.Load(Server.MapPath("xml/prov.xml"));
 
-            XmlNode nodeOne = doc.SelectSingleNode("//Prov/Kategori[@ ID='ekonomi']");
+            XmlNode nodeOne = doc.SelectSingleNode("//Prov/Kategori[@ id='"+xam.GetCategory((int)Session["rqID"])+"']");
 
             foreach (ListItem item in CheckBoxListAnswers.Items)
             {
@@ -153,21 +157,73 @@ namespace kompetensportalen
                 }
             }
 
+            XElement question = new XElement("Fråga");
+            XElement ans1 = new XElement("Svar");
+            question.SetAttributeValue("id", questionCounter.ToString());
+            question.SetValue((string)Session["RandomQuestion"]);
+            question.SetElementValue("SvarEtt", Session["0"]);
+            question.SetElementValue("SvarTvå", Session["1"]);
+            question.SetElementValue("SvarTre", Session["2"]);
+            question.SetElementValue("SvarFyra", Session["3"]);
+            question.SetElementValue("RättSvar", xam.GetCorrectAnswerTemp((int)Session["rqID"]));
+            question.SetElementValue("Markeratsvar", selectedAnswer);
+
             XmlDocument docTwo = new XmlDocument();
-            docTwo.LoadXml("<Fråga>" + (string)Session["RandomQuestion"] + "<Svar>" + Session["0"] + "</Svar><Svar>" + Session["1"] + "</Svar><Svar>" + Session["2"] + "</Svar><Svar>" + Session["3"] + "</Svar><RättSvar>" + xam.GetCorrectAnswerTemp((int)Session["rqID"]) + "</RättSvar><MarkeratSvar>"+selectedAnswer+"</MarkeratSvar></Fråga>");
+            //docTwo.LoadXml("<Fråga>" + (string)Session["RandomQuestion"] + "<Svar>" + Session["0"] + "</Svar><Svar>" + Session["1"] + "</Svar><Svar>" + Session["2"] + "</Svar><Svar>" + Session["3"] + "</Svar><RättSvar>" + xam.GetCorrectAnswerTemp((int)Session["rqID"]) + "</RättSvar><MarkeratSvar>"+selectedAnswer+"</MarkeratSvar></Fråga>");
+            docTwo.LoadXml(""+question+"");
 
             XmlNode nodeTwo = doc.ImportNode(docTwo.FirstChild, true);
             nodeOne.AppendChild(nodeTwo);
 
             doc.Save(Server.MapPath("xml/prov.xml"));
 
-            if (questionCounter == 25)
+            User user = new classes.User();
+
+            var list = (List<int>)Session["questionIDs"];
+            if (list.Count == 13)
             {
                 string xmlstring = doc.OuterXml;
-                int userid = 1;
+                string uname = (string)Session["username"];
                 //Skicka in userid med annat värde...
-                xam.xmlToDb(xmlstring, userid);
+                xam.xmlToDb(uname, xmlstring);
+
+                doc.DocumentElement.RemoveAll();
+
+                XDeclaration dec = new XDeclaration("1.0", "utf-8", "no");
+                XElement etik = new XElement("Kategori");
+                XElement produkt = new XElement("Kategori");
+                XElement ekonomi = new XElement("Kategori");
+
+                etik.SetAttributeValue("id", "Etik");
+                produkt.SetAttributeValue("id", "Produkt");
+                ekonomi.SetAttributeValue("id", "Ekonomi");
+
+                doc.LoadXml(""+dec+" <Prov>" + etik + " "+produkt+" "+ekonomi+"</Prov>");
+
+                doc.Save(Server.MapPath("xml/prov.xml"));
+
+                questionCounter = 0;
+
+                Response.Redirect("examDone.aspx");
             }
+
+            
+            //if (questionCounter == 25 && whichQuestions == false)
+            //{
+            //    string xmlstring = doc.OuterXml;
+            //    int userid = 1;
+            //    //Skicka in userid med annat värde...
+            //    xam.xmlToDb(xmlstring, userid);
+            //    Response.Redirect("examDone.aspx");
+            //}
+            //else if (questionCounter == 15 && whichQuestions == true)
+            //{
+            //    string xmlstring = doc.OuterXml;
+            //    int userid = 1;
+            //    //Skicka in userid med annat värde...
+            //    xam.xmlToDb(xmlstring, userid);
+            //    Response.Redirect("examDone.aspx");
+            //}
 
             CheckBoxListAnswers.ClearSelection();
 

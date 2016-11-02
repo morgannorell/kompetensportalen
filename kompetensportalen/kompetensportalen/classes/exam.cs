@@ -18,6 +18,7 @@ namespace kompetensportalen.classes
         public int answerID { get; set; }
         public bool correctAnswer { get; set; }
         public int correctAnswerID { get; set; }
+        public string category { get; set; }
 
         public string GetQuestionFromDB(int question_id)
         {
@@ -86,11 +87,19 @@ namespace kompetensportalen.classes
         /// Method to get all question IDs.
         /// </summary>
         /// <returns>List of all Question IDs</returns>
-        public List<int> GetQuestionIDs()
+        public List<int> GetQuestionIDs(int examType)
         {
             Postgre conn = new Postgre();
-
-            string sql = "select question_id from exam order by random() limit 25";
+            string sql = "";
+            if (examType == 1)
+            {
+                sql = "select question_id from exam order by random() limit 25";
+            }
+            else if (examType == 2)
+            {
+                sql = "select question_id from exam order by random() limit 15";
+            }
+            
             List<int> ids = new List<int>();
             int id = 0;
 
@@ -146,6 +155,35 @@ namespace kompetensportalen.classes
             }     
         }
 
+        public string GetCategory(int question_id)
+        {
+            Postgre conn = new Postgre();
+
+            string sql = "select * from exam where question_id = @question_id";
+
+            try
+            {
+                conn._cmd = new NpgsqlCommand(sql, conn._conn);
+                conn._cmd.Parameters.AddWithValue("question_id", question_id);
+                conn._dr = conn._cmd.ExecuteReader();
+
+                while (conn._dr.Read())
+                {
+                    category = conn._dr["category"] as string ?? "";
+                }
+                return category;
+            }
+            catch (Exception e)
+            {
+                Debug.Write(e);
+                throw;
+            }
+            finally
+            {
+                conn.CloseConnection();
+            }
+        }
+
         //public DataTable GetCorrectAnswer(string question)
         //{
         //    //Postgre db = new Postgre();
@@ -164,17 +202,17 @@ namespace kompetensportalen.classes
         //    //return dt;
         //}
 
-        public bool xmlToDb(string results, int userid)
+        public bool xmlToDb(string username, string xml)
         {
             Postgre conn = new Postgre();
 
-            string sql = "INSERT INTO testresult(results, userid) VALUES(@results, @userid)";
+            string sql = "INSERT INTO examresult(username, xml) VALUES(@username, @xml)";
 
             try
             {
                 conn._cmd = new NpgsqlCommand(sql, conn._conn);
-                conn._cmd.Parameters.Add(new NpgsqlParameter("results", results));
-                conn._cmd.Parameters.Add(new NpgsqlParameter("userid", userid));
+                conn._cmd.Parameters.Add(new NpgsqlParameter("xml", xml));
+                conn._cmd.Parameters.Add(new NpgsqlParameter("username", username));
                 if (conn._cmd.ExecuteNonQuery() == 1)
                 {
                     return true;
