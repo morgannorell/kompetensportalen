@@ -163,5 +163,29 @@ namespace kompetensportalen.classes
 
         //    //return dt;
         //}
+
+        public bool xmlToDb(string results, int userid)
+        {
+            Postgre conn = new Postgre();
+
+            string sql = "INSERT INTO testresult(results, userid) VALUES(@results, @userid)";
+
+            try
+            {
+                conn._cmd = new NpgsqlCommand(sql, conn._conn);
+                conn._cmd.Parameters.Add(new NpgsqlParameter("results", results));
+                conn._cmd.Parameters.Add(new NpgsqlParameter("userid", userid));
+                if (conn._cmd.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (NpgsqlException e)
+            {
+                Debug.Write(e);
+                return false;
+            }
+        }
     }
 }
