@@ -35,6 +35,7 @@ namespace kompetensportalen
                 if (dt.Rows.Count > 0)
                 {
                     Session["login"] = "noadmin";
+                    Session["username"] = username;
                     Response.Redirect("course_one.aspx");
                 }
                 else
