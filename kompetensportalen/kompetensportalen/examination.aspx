@@ -4,9 +4,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server">
     <div class="examination">
-        <div id="countdownTimer"></div>
+        <div class="countdownTimer" id="countdownTimer"></div>
         <div class="exam-question" runat="server">
-            <h1 id="qnbr" runat="server"><center>Frågeställning</center></h1>
+            <h1 class="qnbr" id="qnbr" runat="server"><center>Frågeställning</center></h1>
+            <div class="category" id="category" runat="server"></div>
             <p id="question" class="questions" runat="server"></p>
         </div>
         <div class="hr" id="hr" runat="server"></div>

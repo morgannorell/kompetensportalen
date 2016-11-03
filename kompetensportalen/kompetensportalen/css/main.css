@@ -67,6 +67,25 @@ div.hr{
     margin: 0 25px;
     padding: 0 25px;
 }
+
+div.countdownTimer{
+    display:block;
+    margin: 0 auto;
+    padding-top: 15px;
+    font-family: 'High Tower Text';
+}
+
+div.category{
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    font: bold;
+}
+
+div.exam-question h1{
+    margin: 0;
+}
 /* TEXT */
 
 h2 {

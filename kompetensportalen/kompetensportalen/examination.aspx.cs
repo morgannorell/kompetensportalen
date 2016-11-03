@@ -114,6 +114,7 @@ namespace kompetensportalen
             bool correctAmountSelected = false;
             questionCounter++;
 
+
             XmlDocument doc = new XmlDocument();
             doc.Load(Server.MapPath("xml/prov.xml"));
 
@@ -207,35 +208,20 @@ namespace kompetensportalen
                 Response.Redirect("examDone.aspx");
             }
 
-            
-            //if (questionCounter == 25 && whichQuestions == false)
-            //{
-            //    string xmlstring = doc.OuterXml;
-            //    int userid = 1;
-            //    //Skicka in userid med annat värde...
-            //    xam.xmlToDb(xmlstring, userid);
-            //    Response.Redirect("examDone.aspx");
-            //}
-            //else if (questionCounter == 15 && whichQuestions == true)
-            //{
-            //    string xmlstring = doc.OuterXml;
-            //    int userid = 1;
-            //    //Skicka in userid med annat värde...
-            //    xam.xmlToDb(xmlstring, userid);
-            //    Response.Redirect("examDone.aspx");
-            //}
-
             CheckBoxListAnswers.ClearSelection();
 
             GetNewQuestionAndAnswers();
+
+            category.InnerText = "Kategori: " + xam.GetCategory((int)Session["rqID"]) + "";
         }
 
 
         protected void btnStart_Click(object sender, EventArgs e)
         {
+            Exam xam = new Exam();
             GetNewQuestionAndAnswers();
-            //Page.ClientScript.RegisterStartupScript(this.GetType(), "js/timer.js", "initializeClock('clockdiv', deadline)", true);
-            ScriptManager.RegisterStartupScript(this, GetType(), "initializeClock", "initializeClock('clockdiv', deadline);", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "initializeClock", "test()", true);
+            category.InnerText = "Kategori: " + xam.GetCategory((int)Session["rqID"]) + "";
         }
 
         
