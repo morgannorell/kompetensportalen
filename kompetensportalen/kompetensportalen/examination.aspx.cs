@@ -114,6 +114,7 @@ namespace kompetensportalen
             bool correctAmountSelected = false;
             questionCounter++;
 
+            ScriptManager.RegisterStartupScript(this, GetType(), "Resume", "resumeCountdown()", true);
 
             XmlDocument doc = new XmlDocument();
             doc.Load(Server.MapPath("xml/prov.xml"));
@@ -181,7 +182,7 @@ namespace kompetensportalen
             User user = new classes.User();
 
             var list = (List<int>)Session["questionIDs"];
-            if (list.Count == 13)
+            if (list.Count == 0)
             {
                 string xmlstring = doc.OuterXml;
                 string uname = (string)Session["username"];
@@ -220,7 +221,7 @@ namespace kompetensportalen
         {
             Exam xam = new Exam();
             GetNewQuestionAndAnswers();
-            ScriptManager.RegisterStartupScript(this, GetType(), "initializeClock", "test()", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "Start", "startCountdown()", true);
             category.InnerText = "Kategori: " + xam.GetCategory((int)Session["rqID"]) + "";
         }
 
