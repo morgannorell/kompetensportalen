@@ -162,7 +162,7 @@ namespace kompetensportalen
 
             XElement question = new XElement("Fråga");
             XElement ans1 = new XElement("Svar");
-            question.SetAttributeValue("id", questionCounter.ToString());
+            question.SetAttributeValue("id", (int)Session["rqID"]);
             question.SetValue((string)Session["RandomQuestion"]);
             question.SetElementValue("SvarEtt", Session["0"]);
             question.SetElementValue("SvarTvå", Session["1"]);
@@ -182,7 +182,7 @@ namespace kompetensportalen
             User user = new classes.User();
 
             var list = (List<int>)Session["questionIDs"];
-            if (list.Count == 0)
+            if (list.Count == 13)
             {
                 string xmlstring = doc.OuterXml;
                 string uname = (string)Session["username"];
