@@ -101,6 +101,19 @@ div.bottom-black {
 
 }
 
+.exam-button{
+    background-color: #62983c;
+    border: 1px solid #62983c;
+    border-radius: 5px;
+    display: block;
+    padding: 10px 20px;
+    margin: 15px auto;
+    font-variant:small-caps;
+    color:white;
+    margin-bottom: 25px;
+
+}
+
 .login-textbox{
     width: 225px;
     padding: 10px 10px;

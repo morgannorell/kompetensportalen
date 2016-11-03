@@ -14,7 +14,6 @@ namespace kompetensportalen
 {
     public partial class examination : System.Web.UI.Page
     {
-
         Postgre conn = new Postgre();
         Exam examina = new Exam();
         List<string> allAnswers = new List<string>();
@@ -48,6 +47,8 @@ namespace kompetensportalen
                 hr.Visible = false;
                 btnNext.Visible = false;
                 btnStart.Visible = true;
+                H1.Visible = true;
+                text.Visible = true;
             }
             else
             {
@@ -56,10 +57,10 @@ namespace kompetensportalen
                 hr.Visible = true;
                 btnNext.Visible = true;
                 btnStart.Visible = false;
+                H1.Visible = false;
+                text.Visible = false;
             }                             
         }
-
-
 
         //METHODS
         public void GetNewQuestionAndAnswers()
@@ -171,7 +172,6 @@ namespace kompetensportalen
             question.SetElementValue("Markeratsvar", selectedAnswer);
 
             XmlDocument docTwo = new XmlDocument();
-            //docTwo.LoadXml("<Fråga>" + (string)Session["RandomQuestion"] + "<Svar>" + Session["0"] + "</Svar><Svar>" + Session["1"] + "</Svar><Svar>" + Session["2"] + "</Svar><Svar>" + Session["3"] + "</Svar><RättSvar>" + xam.GetCorrectAnswerTemp((int)Session["rqID"]) + "</RättSvar><MarkeratSvar>"+selectedAnswer+"</MarkeratSvar></Fråga>");
             docTwo.LoadXml(""+question+"");
 
             XmlNode nodeTwo = doc.ImportNode(docTwo.FirstChild, true);
@@ -186,7 +186,6 @@ namespace kompetensportalen
             {
                 string xmlstring = doc.OuterXml;
                 string uname = (string)Session["username"];
-                //Skicka in userid med annat värde...
                 xam.xmlToDb(uname, xmlstring);
 
                 doc.DocumentElement.RemoveAll();
