@@ -23,9 +23,10 @@
                         <asp:Label ID="lblUsername" CssClass="login-label" runat="server" Text="Användarnamnn:"></asp:Label><br />
                         <asp:TextBox ID="tbxUsername" CssClass="login-textbox" runat="server"></asp:TextBox><br /><br />
                         <asp:Label ID="lblPassword" CssClass="login-label" runat="server" Text="Lösenord:"></asp:Label><br />                        
-                        <asp:TextBox ID="tbxPassword" CssClass="login-textbox" runat="server"></asp:TextBox><br /><br />
+                        <asp:TextBox ID="tbxPassword" CssClass="login-textbox" TextMode="Password" runat="server"></asp:TextBox><br /><br />
                         <asp:Button ID="btnLogin" CssClass="login-button" runat="server" Text="Logga in" onclick="btnLogin_Click"></asp:Button><br />
-                        <div id="error_login" runat="server"></div>                        
+                        <div id="error_login" class="errorlogin" runat="server"></div>                        
+                        <a href="support.aspx">Glömt lösenord</a><p></p>                        
                     </form>
                 </div>                
 			</div>

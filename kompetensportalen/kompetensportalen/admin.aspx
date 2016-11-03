@@ -21,13 +21,13 @@
                 <div class="vr"></div>
                 <div class="login textfield-responsive">
                     <form runat="server">
-                        <asp:Label ID="lblAdminUsername" CssClass="support-label" runat="server" Text="Användarnamnn:"></asp:Label><br />
-                        <asp:TextBox ID="tbxAdminUsername" CssClass="support-textbox" runat="server"></asp:TextBox><br /><br />
-                        <asp:Label ID="lblAdminPassword" CssClass="support-label" runat="server" Text="Lösenord:"></asp:Label><br />                        
-                        <asp:TextBox ID="tbxAdminPassword" CssClass="support-textbox" runat="server"></asp:TextBox><br /><br />
-                        <asp:Button ID="btnSendAdmCred" CssClass="support-button" runat="server" Text="Logga in" OnClick="btnSendAdmCred_Click"></asp:Button>
-                        <p></p><div id="error_login" runat="server"></div>                        
-                        <p><a href="support.aspx">Glömt lösenord</a></p>                        
+                        <asp:Label ID="lblAdminUsername" CssClass="login-label" runat="server" Text="Användarnamnn:"></asp:Label><br />
+                        <asp:TextBox ID="tbxAdminUsername" CssClass="login-textbox" runat="server"></asp:TextBox><br /><br />
+                        <asp:Label ID="lblAdminPassword" CssClass="login-label" runat="server" Text="Lösenord:"></asp:Label><br />                        
+                        <asp:TextBox ID="tbxAdminPassword" CssClass="login-textbox" runat="server"></asp:TextBox><br /><br />
+                        <asp:Button ID="btnSendAdmCred" CssClass="login-button" TextMode="Password" runat="server" Text="Logga in" OnClick="btnSendAdmCred_Click"></asp:Button>
+                        <div id="error_login" class="errorlogin" runat="server"></div>                        
+                        <a href="support.aspx">Glömt lösenord</a><p></p>                     
                     </form>
                 </div>
 			</div>

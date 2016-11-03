@@ -102,7 +102,7 @@ div.bottom-black {
 }
 
 .login-textbox{
-    width: 300px;
+    width: 225px;
     padding: 10px 10px;
     font-size: 14px;
     border-radius:5px;
@@ -116,11 +116,9 @@ div.bottom-black {
     border: 1px solid #62983c;
     border-radius: 5px;
     padding: 10px 20px;
-    margin-left: 240px;
-    margin-top: 15px;
+    margin: 15px 0 25px 0;
     font-variant:small-caps;
     color:white;
-    margin-bottom: 25px;
 }
 
 /* TEXT */
@@ -145,7 +143,7 @@ div.footer p {
     padding-left: 4px;
 }
 
-div.error_login {
+div.errorlogin {
     color: red;
     font-size: 11px;
 }
@@ -160,7 +158,7 @@ div.error_login {
 }
 
 .login-label {
-    font-size: 12px;
+    font-size: 14px;
     font-variant: small-caps;
     padding: 0 4px;
 }

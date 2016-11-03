@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <Prov>
   <Kategori id="Etik" />
-  <Kategori id="Produkt">
-    <Fråga id="1">Hur ofta bör avstämningsmöte hållas med en B kund per år?<SvarEtt>6 gånger</SvarEtt><SvarTvå>1 gång</SvarTvå><SvarTre>4 gånger</SvarTre><SvarFyra>2 gånger</SvarFyra><RättSvar>4 gånger</RättSvar><Markeratsvar>4 gånger</Markeratsvar></Fråga>
-  </Kategori>
+  <Kategori id="Produkt" />
   <Kategori id="Ekonomi" />
 </Prov>
