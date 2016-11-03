@@ -7,7 +7,6 @@ var timerId = setInterval(function () {
     document.getElementById('countdownTimer').innerHTML = result;
 
     if (countdown <= 0) {
-        alert("30 min!");
         clearInterval(timerId);
         window.location.replace("examFail.aspx");
     } else {
