@@ -17,6 +17,16 @@ namespace kompetensportalen.classes
         public string Username { get; set; }
         public string Password { get; set; }
 
+        public DataTable GetUserList()
+        {
+            Postgre db = new Postgre();
+            DataTable dt = new DataTable();
+
+            string sql = "SELECT * FROM person WHERE isadmin = false";
+            dt = db.Select(sql);
+
+            return dt;
+        }
         public DataTable CourseLogin()
         {
             Postgre db = new Postgre();

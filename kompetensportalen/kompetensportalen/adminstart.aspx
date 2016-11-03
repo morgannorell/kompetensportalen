@@ -3,8 +3,27 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="article">
-        <h1>Success.</h1>
-        <div id="myDiv" runat="server">
+        <div class="textfield-left">
+            <div class="leaf-login"><img src="images/leaf.png" /></div>
+            <div class="center"><h2>Administration</h2></div>
+            <p><b>Såhär gör du!</b></p>
+            <p>På den här sidan kan du som administratör se
+                vilka som har gjort prov. Du kan även markera
+                en användare och sedan klicka på visa test för
+                att se användarens senast genomförda prov.
+            </p>                    
         </div>
-    </div>
+        <div class="vr"></div>
+        <div class="login textfield-responsive">
+            <form runat="server">
+                <div class="userlistTitle">Användare som genomfört test.<br />
+                    Klicka på den användare som du vill se testresultat för.
+                </div><p></p><hr class="line" />
+                <div id="userlist" runat="server">
+
+                </div>
+                <asp:Button ID="btnShowTest" CssClass="login-button" runat="server" Text="Visa test" onclick="btnShowTest_Click"></asp:Button><br />                
+            </form>
+        </div>                
+	</div>
 </asp:Content>

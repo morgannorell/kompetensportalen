@@ -163,6 +163,14 @@ div.errorlogin {
     padding: 0 4px;
 }
 
+div.mylist:hover{
+	color: #62983c;
+}
+
+hr.line {
+    margin-right: 35px;
+}
+
 
 /* NAVIGATION */
 

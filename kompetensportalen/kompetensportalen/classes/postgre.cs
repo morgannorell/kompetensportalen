@@ -81,6 +81,29 @@ namespace kompetensportalen.classes
             }
         }
 
+        // Select without parameters
+        public DataTable Select(string sql)
+        {
+            DataTable myTable = new DataTable();
+            try
+            {
+                _cmd = new NpgsqlCommand(sql, _conn);
+                _dr = _cmd.ExecuteReader();
+                myTable.Load(_dr);
+
+                return myTable;
+            }
+            catch (NpgsqlException ex)
+            {
+                Debug.Write(ex);
+                throw;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+
         public void SetParameter(string parametername, string parametervalue)
         {
             new NpgsqlParameter(parametername, parametervalue);

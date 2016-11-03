@@ -13,12 +13,21 @@ namespace kompetensportalen {
     public partial class adminstart {
         
         /// <summary>
-        /// myDiv control.
+        /// userlist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl myDiv;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl userlist;
+        
+        /// <summary>
+        /// btnShowTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnShowTest;
     }
 }

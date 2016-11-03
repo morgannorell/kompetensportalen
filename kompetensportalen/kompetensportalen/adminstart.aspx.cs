@@ -1,8 +1,11 @@
-﻿using System;
+﻿using kompetensportalen.classes;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace kompetensportalen
@@ -11,7 +14,22 @@ namespace kompetensportalen
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            myDiv.InnerHtml = "From code behind. Din session är: " + Session["login"] + " " + Session.SessionID;
+            DataTable dt = new DataTable();
+            User login = new User();
+            dt = login.GetUserList();
+       
+            foreach (DataRow row in dt.Rows)
+            {
+                HtmlGenericControl div = new HtmlGenericControl("div class='mylist'");
+                div.InnerHtml = "Namn: " + row["fistname"].ToString() + " " + row["lastname"].ToString() + "<br />" +
+                    "Användarnamn: " + row["username"].ToString() + "<br /><br />";
+                userlist.Controls.Add(div);
+            }           
+        }
+
+        protected void btnShowTest_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

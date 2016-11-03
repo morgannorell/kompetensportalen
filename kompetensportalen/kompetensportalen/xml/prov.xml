@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <Prov>
-  <Kategori id="Etik" />
-  <Kategori id="Produkt" />
+  <Kategori id="Etik">
+    <Fråga id="2">Du sitter med ägaren till ett nystartat företa som vill bli kund hos JE-Banken. Ägaren vill sätta in ett kontant startkapital men kan inte på något sätt uppvisa var pengarna kommer ifrån. Hur agerar du?<SvarEtt>Du meddelar din chef</SvarEtt><SvarTvå>Du meddelar ägaren att han inte kan bli kund om det inte går att uppvisa var pengarna kommer från</SvarTvå><SvarTre>Du hjälper ägaren med att skriva dokument som förklarar pengarna</SvarTre><SvarFyra>Du skriver in ägaren som kund och startar ett bankkonto där du sätter in pengarna</SvarFyra><RättSvar>Du meddelar ägaren att han inte kan bli kund om det inte går att uppvisa var pengarna kommer från</RättSvar><Markeratsvar>Du skriver in ägaren som kund och startar ett bankkonto där du sätter in pengarna</Markeratsvar></Fråga>
+    <Fråga id="4">Vilka grundläggande värderingar och principer bör JE-bankens kontakter med kunder och andra affärspartner präglas av?<SvarEtt>Förtroende, långsiktighet, kompetens och respekt</SvarEtt><SvarTvå>Ödmjukhet, respekt, långsiktighet och förtroende</SvarTvå><SvarTre>Respekt, pålitlighet, kompetens och framåtanda</SvarTre><SvarFyra>Framåtanda, öppenhet, pålitlighet och långsiktighet</SvarFyra><RättSvar>Förtroende, långsiktighet, kompetens och respekt</RättSvar><Markeratsvar>Framåtanda, öppenhet, pålitlighet och långsiktighet</Markeratsvar></Fråga>
+  </Kategori>
+  <Kategori id="Produkt">
+    <Fråga id="1">Varför ska en kund välja ett företagspaket?<SvarEtt>Kunden får rabatt på alla tjänster</SvarEtt><SvarTvå>Det ingår bokföring</SvarTvå><SvarTre>En fri revision per år ingår</SvarTre><SvarFyra>Kunden får en personlig kontakt</SvarFyra><RättSvar>Kunden får en personlig kontakt</RättSvar><Markeratsvar>En fri revision per år ingår</Markeratsvar></Fråga>
+    <Fråga id="3">Hur ofta bör strategimöte hållas med en A-kund per år?<SvarEtt>Varannat år</SvarEtt><SvarTvå>2 gånger</SvarTvå><SvarTre>4 gånger</SvarTre><SvarFyra>1 gång</SvarFyra><RättSvar>1 gång</RättSvar><Markeratsvar>1 gång</Markeratsvar></Fråga>
+  </Kategori>
   <Kategori id="Ekonomi" />
 </Prov>
