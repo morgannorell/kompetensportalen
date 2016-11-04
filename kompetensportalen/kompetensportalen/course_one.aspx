@@ -24,11 +24,11 @@
                 <div class="textfield-right textfield-responsive">
                     <p>Du lämnar normalt ett svar per fråga men det kan finnas frågor som
                         kräver flera svar. Detta står då på respektive fråga.</p>
-                    <p>Du har 30 minuter på dig att slutföra testet.</p>
-                    <p><i>Lycka till!!</i></p>
-                    <form runat="server">                        
-                        <input type="button" name="Login" value="Tidigare testresultat" />
-                        <asp:Button ID="btnStartExam" runat="server" Text="Starta test" OnClick="btnStartExam_Click" />
+                    <br />
+                    <form runat="server">     
+                        <asp:Button ID="btnStartExam" runat="server" Text="Vidare till testportalen" OnClick="btnStartExam_Click" CssClass="exam-button"/>                   
+                        <input type="button" name="Login" value="Tidigare testresultat" class="exam-button"/>
+                        
                     </form>
                 </div>
 			</div>

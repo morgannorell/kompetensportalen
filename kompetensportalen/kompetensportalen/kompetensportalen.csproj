@@ -93,6 +93,7 @@
     <Content Include="oldexam.aspx" />
     <Content Include="packages.config" />
     <Content Include="test.xml" />
+    <Content Include="xml\done.xml" />
     <Content Include="xml\prov.xml" />
     <Content Include="xml\prov.xslt" />
     <Content Include="xml\XMLFile1.xml" />
@@ -126,6 +127,7 @@
     <Compile Include="adminstart.aspx.designer.cs">
       <DependentUpon>adminstart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="classes\Correct.cs" />
     <Compile Include="classes\Exam.cs" />
     <Compile Include="classes\Postgre.cs" />
     <Compile Include="classes\User.cs" />

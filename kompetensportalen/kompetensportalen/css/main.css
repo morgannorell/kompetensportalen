@@ -72,7 +72,9 @@ div.countdownTimer{
     display:block;
     margin: 0 auto;
     padding-top: 15px;
-    font-family: 'High Tower Text';
+    font-family: 'Yu Gothic';
+    font-size: 25px;
+    color: #62983c;
 }
 
 div.category{
