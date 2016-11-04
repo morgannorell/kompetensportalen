@@ -90,9 +90,11 @@
     <Content Include="js\menu.js" />
     <Content Include="js\timer.js" />
     <Content Include="laboratorium.aspx" />
+    <Content Include="oldexam.aspx" />
     <Content Include="packages.config" />
     <Content Include="test.xml" />
     <Content Include="xml\prov.xml" />
+    <Content Include="xml\prov.xslt" />
     <Content Include="xml\XMLFile1.xml" />
     <None Include="Properties\PublishProfiles\Morgan.pubxml" />
     <Content Include="Site.Master" />
@@ -175,6 +177,13 @@
     </Compile>
     <Compile Include="laboratorium.aspx.designer.cs">
       <DependentUpon>laboratorium.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="oldexam.aspx.cs">
+      <DependentUpon>oldexam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="oldexam.aspx.designer.cs">
+      <DependentUpon>oldexam.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

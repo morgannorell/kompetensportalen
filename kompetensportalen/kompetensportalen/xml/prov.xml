@@ -7,6 +7,7 @@
   <Kategori id="Produkt">
     <Fråga id="1">Varför ska en kund välja ett företagspaket?<SvarEtt>Kunden får rabatt på alla tjänster</SvarEtt><SvarTvå>Det ingår bokföring</SvarTvå><SvarTre>En fri revision per år ingår</SvarTre><SvarFyra>Kunden får en personlig kontakt</SvarFyra><RättSvar>Kunden får en personlig kontakt</RättSvar><Markeratsvar>En fri revision per år ingår</Markeratsvar></Fråga>
     <Fråga id="3">Hur ofta bör strategimöte hållas med en A-kund per år?<SvarEtt>Varannat år</SvarEtt><SvarTvå>2 gånger</SvarTvå><SvarTre>4 gånger</SvarTre><SvarFyra>1 gång</SvarFyra><RättSvar>1 gång</RättSvar><Markeratsvar>1 gång</Markeratsvar></Fråga>
+    <Fråga id="1">Varför ska en kund välja ett företagspaket?<SvarEtt>Kunden får rabatt på alla tjänster</SvarEtt><SvarTvå>Det ingår bokföring</SvarTvå><SvarTre>En fri revision per år ingår</SvarTre><SvarFyra>Kunden får en personlig kontakt</SvarFyra><RättSvar>Kunden får en personlig kontakt</RättSvar><Markeratsvar>Kunden får rabatt på alla tjänster</Markeratsvar></Fråga>
   </Kategori>
   <Kategori id="Ekonomi" />
 </Prov>

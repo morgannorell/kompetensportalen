@@ -20,9 +20,9 @@
                     Klicka på den användare som du vill se testresultat för.
                 </div><p></p><hr class="line" />
                 <div id="userlist" runat="server">
+                    
 
                 </div>
-                <asp:Button ID="btnShowTest" CssClass="login-button" runat="server" Text="Visa test" onclick="btnShowTest_Click"></asp:Button><br />                
             </form>
         </div>                
 	</div>

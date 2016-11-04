@@ -10,15 +10,24 @@
 namespace kompetensportalen {
     
     
-    public partial class adminstart {
+    public partial class oldexam {
         
         /// <summary>
-        /// userlist control.
+        /// xmlq control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl userlist;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl xmlq;
+        
+        /// <summary>
+        /// xmlc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl xmlc;
     }
 }

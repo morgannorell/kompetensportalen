@@ -121,6 +121,16 @@ div.bottom-black {
     color:white;
 }
 
+.showTest-button {
+    background-color: #62983c;
+    border: 1px solid #62983c;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 15px 0 25px 0;
+    font-variant:small-caps;
+    color:white;
+}
+
 /* TEXT */
 
 div.footer h3 {
@@ -164,7 +174,9 @@ div.errorlogin {
 }
 
 div.mylist:hover{
-	color: #62983c;
+	opacity: .5;
+    display: block;
+    margin-right: 35px;
 }
 
 hr.line {

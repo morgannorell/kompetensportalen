@@ -225,5 +225,22 @@ namespace kompetensportalen.classes
                 return false;
             }
         }
+
+        public DataTable GetExam(string user)
+        {
+            Postgre db = new Postgre();
+            DataTable dt = new DataTable();
+
+            // Dictionary to send parameters in format key-value
+            Dictionary<string, string> myParams = new Dictionary<string, string>();
+
+            myParams.Add("@uname", user);
+
+            string sql = "select * from examresult where username = @uname";
+            
+            dt = db.Select(sql, myParams);
+
+            return dt;
+        }
     }
 }

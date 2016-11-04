@@ -17,12 +17,12 @@ namespace kompetensportalen
             DataTable dt = new DataTable();
             User login = new User();
             dt = login.GetUserList();
-       
+
             foreach (DataRow row in dt.Rows)
             {
-                HtmlGenericControl div = new HtmlGenericControl("div class='mylist'");
-                div.InnerHtml = "Namn: " + row["fistname"].ToString() + " " + row["lastname"].ToString() + "<br />" +
-                    "Användarnamn: " + row["username"].ToString() + "<br /><br />";
+                HtmlGenericControl div = new HtmlGenericControl("div class=\"mylist\"" + 
+                    " id=\"" + row["username"].ToString() + "\"" + " runat=\"server\"");
+                div.InnerHtml = "<a href=\"oldexam.aspx?myparam=" + row["username"].ToString() + "\">" + row["fistname"].ToString() + " " + row["lastname"].ToString() + "</a><br /><br />";
                 userlist.Controls.Add(div);
             }           
         }
