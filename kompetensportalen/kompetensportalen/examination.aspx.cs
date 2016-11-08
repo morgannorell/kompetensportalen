@@ -163,7 +163,7 @@ namespace kompetensportalen
             XElement question = new XElement("Fråga");
             XElement ans1 = new XElement("Svar");
             question.SetAttributeValue("id", (int)Session["rqID"]);
-            question.SetValue((string)Session["RandomQuestion"]);
+            question.SetElementValue("Text", (string)Session["RandomQuestion"]);
             question.SetElementValue("SvarEtt", Session["0"]);
             question.SetElementValue("SvarTvå", Session["1"]);
             question.SetElementValue("SvarTre", Session["2"]);
