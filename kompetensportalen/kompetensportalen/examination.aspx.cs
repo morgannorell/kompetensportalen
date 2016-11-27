@@ -186,7 +186,8 @@ namespace kompetensportalen
             {
                 string xmlstring = doc.OuterXml;
                 string uname = (string)Session["username"];
-                xam.xmlToDb(uname, xmlstring);
+                DateTime date = DateTime.Now;
+                xam.xmlToDb(uname, xmlstring, date);
 
                 doc.DocumentElement.RemoveAll();
 
