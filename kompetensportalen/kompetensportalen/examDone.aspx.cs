@@ -17,8 +17,6 @@ namespace kompetensportalen
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["username"] = "niso";
-
             ExamTable.Visible = true;
             Label1.Visible = true;
             Button1.Visible = false;
