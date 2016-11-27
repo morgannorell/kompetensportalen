@@ -182,7 +182,7 @@ namespace kompetensportalen
             User user = new classes.User();
 
             var list = (List<int>)Session["questionIDs"];
-            if (list.Count == 13)
+            if (list.Count == 0)
             {
                 string xmlstring = doc.OuterXml;
                 string uname = (string)Session["username"];
