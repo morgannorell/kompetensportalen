@@ -18,27 +18,73 @@ namespace kompetensportalen
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["username"] = "niso";
-            XmlDocument doc = corr.DbToXml((string)Session["username"]);
+            //XmlDocument doc = corr.DbToXml((string)Session["username"]);
+            //doc.Save(Server.MapPath("xml/done.xml"));
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string path = Server.MapPath("xml/done.xml");
+            XmlDocument doc = corr.DbToXml((string)Session["username"]);
+            doc.Save(Server.MapPath("xml/done.xml"));
 
-            XmlTextReader reader = new XmlTextReader(path);
-            XmlNode node = doc.ReadNode(reader);
-            List<string> questions = new List<string>();
+            XmlNodeList questions = doc.SelectNodes("/Prov/Kategori/Fråga");
 
-            foreach (XmlNode childNode in node.ChildNodes)
+            TableRow tr = null;
+            int i = 1;
+
+            foreach (XmlNode n in questions)
             {
-                int id = Convert.ToInt32(childNode.Attributes["id"].Value);
-                string question = xam.GetQuestionFromDB(id);
+                tr = new TableRow();
 
-                if (question == childNode.Value)
+                //Exam xam = new Exam();
+                //xam.question = n["Fråga"].InnerText;
+                //xam.selectedAnswer = n["Markeratsvar"].InnerText;
+                //xam.corrAnswerText = n["RättSvar"].InnerText;
+
+                TableCell questionNumber = new TableCell();
+                TableCell question = new TableCell();
+                TableCell correctAnswer = new TableCell();
+                TableCell selectedAnswer = new TableCell();
+
+                
+                questionNumber.Text = i++.ToString();
+                question.Text = n["Text"].InnerText;
+                selectedAnswer.Text = n["Markeratsvar"].InnerText;
+                correctAnswer.Text = n["RättSvar"].InnerText;
+
+                if (selectedAnswer.Text == correctAnswer.Text)
                 {
-                    Label1.Text = "Test";
+                    selectedAnswer.BackColor = System.Drawing.Color.Green;
                 }
+                else
+                {
+                    selectedAnswer.BackColor = System.Drawing.Color.Red;
+                }
+
+                tr.Cells.Add(questionNumber);
+                tr.Cells.Add(question);
+                tr.Cells.Add(correctAnswer);
+                tr.Cells.Add(selectedAnswer);
+                
+
+                ExamTable.Rows.Add(tr);
             }
+            
+
+            //XmlTextReader reader = new XmlTextReader(path);
+            //XmlNode node = doc.ReadNode(reader);
+            //List<string> questions = new List<string>();
+
+            //foreach (XmlNode childNode in node.ChildNodes)
+            //{
+            //    int id = Convert.ToInt32(childNode.Attributes["id"].Value);
+            //    string question = xam.GetQuestionFromDB(id);
+
+            //    if (question == childNode.Value)
+            //    {
+            //        Label1.Text = "Test";
+            //    }
+            //}
         }
     }
 }

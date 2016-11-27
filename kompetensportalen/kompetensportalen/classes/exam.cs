@@ -15,6 +15,8 @@ namespace kompetensportalen.classes
         public string question { get; set; }
         public int questionID { get; set; }
         public string answer { get; set; }
+        public string selectedAnswer { get; set; }
+        public string corrAnswerText { get; set; }
         public int answerID { get; set; }
         public bool correctAnswer { get; set; }
         public int correctAnswerID { get; set; }

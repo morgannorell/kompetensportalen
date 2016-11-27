@@ -1,1 +1,144 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Prov>
+  <Kategori id="Etik">
+    <Fråga id="10">
+      <Text>Vilka regler gäller angående alkohol och droger?</Text>
+      <SvarEtt>Nolltolerans, det accepters inte och anställningen upphör</SvarEtt>
+      <SvarTvå>Nolltolerans, medarbetaren erbjuds hjälp i form av behandling</SvarTvå>
+      <SvarTre>Det är ok om man jobbar övertid efter kl 16:00</SvarTre>
+      <SvarFyra>Ett glas vin eller två öl är ok till lunch</SvarFyra>
+      <RättSvar>Nolltolerans, medarbetaren erbjuds hjälp i form av behandling</RättSvar>
+      <Markeratsvar>Nolltolerans, medarbetaren erbjuds hjälp i form av behandling</Markeratsvar>
+    </Fråga>
+    <Fråga id="6">
+      <Text>Trots att du har tystnadsplikt finns det någon du kan diskutera din kund med?</Text>
+      <SvarEtt>Din chef</SvarEtt>
+      <SvarTvå>Dina kollegor på samma avdelning</SvarTvå>
+      <SvarTre>Alla som jobbar på JE-Banken</SvarTre>
+      <SvarFyra>Nej du får inte diskutera med någon</SvarFyra>
+      <RättSvar>Dina kollegor på samma avdelning</RättSvar>
+      <Markeratsvar>Alla som jobbar på JE-Banken</Markeratsvar>
+    </Fråga>
+    <Fråga id="1">
+      <Text>Vilka grundläggande värderingar och principer bör JE-bankens kontakter med kunder och andra affärspartner präglas av?</Text>
+      <SvarEtt>Förtroende, långsiktighet, kompetens och respekt</SvarEtt>
+      <SvarTvå>Ödmjukhet, respekt, långsiktighet och förtroende</SvarTvå>
+      <SvarTre>Respekt, pålitlighet, kompetens och framåtanda</SvarTre>
+      <SvarFyra>Framåtanda, öppenhet, pålitlighet och långsiktighet</SvarFyra>
+      <RättSvar>Förtroende, långsiktighet, kompetens och respekt</RättSvar>
+      <Markeratsvar>Förtroende, långsiktighet, kompetens och respekt</Markeratsvar>
+    </Fråga>
+    <Fråga id="2">
+      <Text>En kund frågar om det går att bokföra en privat inköpt dator som en företagsdator, hur svarar du för att hjälpa kunden men att ändå följa lagar och regler?</Text>
+      <SvarEtt>Nej</SvarEtt>
+      <SvarTvå>Ja</SvarTvå>
+      <SvarTre>Du svarar ja om du använder datorn minst 60 % av tiden i företaget</SvarTre>
+      <SvarFyra>Du svarar att datorn måste användas inom företaget och vara skriven på företaget för att det ska gå</SvarFyra>
+      <RättSvar>Du svarar att datorn måste användas inom företaget och vara skriven på företaget för att det ska gå</RättSvar>
+      <Markeratsvar>Du svarar ja om du använder datorn minst 60 % av tiden i företaget</Markeratsvar>
+    </Fråga>
+    <Fråga id="9">
+      <Text>En kund kommer in och vill ha hjälp men du ser att senaste fakturan för det arbete JE-Banken gjort förra månaden inte är betalt, Hur agerar du?</Text>
+      <SvarEtt>Du informerar din närmaste chef som får besluta om hur ni ska agera</SvarEtt>
+      <SvarTvå>Du hjälper kunden som vanligt men informerar om läget och att kunden måste betala för att få hjälp i fortsättningen</SvarTvå>
+      <SvarTre>Du meddelar kunden att betalning måste göras innan du kan hjälpa till</SvarTre>
+      <SvarFyra>Du meddelar kunden om att kontot på banken kommer att avslutas</SvarFyra>
+      <RättSvar>Du hjälper kunden som vanligt men informerar om läget och att kunden måste betala för att få hjälp i fortsättningen</RättSvar>
+      <Markeratsvar>Du meddelar kunden att betalning måste göras innan du kan hjälpa till</Markeratsvar>
+    </Fråga>
+    <Fråga id="7">
+      <Text>Du hör av en bekant att en kollega har diskuterat om en kund. Hur bör du agera?</Text>
+      <SvarEtt>Prata med din kollega så att denna slutar med detta</SvarEtt>
+      <SvarTvå>Meddela din chef</SvarTvå>
+      <SvarTre>Du behöver inte göra något alls</SvarTre>
+      <SvarFyra>Meddela kunden</SvarFyra>
+      <RättSvar>Meddela din chef</RättSvar>
+      <Markeratsvar>Meddela din chef</Markeratsvar>
+    </Fråga>
+  </Kategori>
+  <Kategori id="Produkt">
+    <Fråga id="18">
+      <Text>Hur ofta bör avstämningsmöte hållas med en B kund per år?</Text>
+      <SvarEtt>6 gånger</SvarEtt>
+      <SvarTvå>1 gång</SvarTvå>
+      <SvarTre>4 gånger</SvarTre>
+      <SvarFyra>2 gånger</SvarFyra>
+      <RättSvar>4 gånger</RättSvar>
+      <Markeratsvar>2 gånger</Markeratsvar>
+    </Fråga>
+    <Fråga id="16">
+      <Text>Vad ingår i alla företagspaket?</Text>
+      <SvarEtt>Personlig kundkontakt</SvarEtt>
+      <SvarTvå>Företagskredit</SvarTvå>
+      <SvarTre>Förmånlig ränta</SvarTre>
+      <SvarFyra>Försäkringar</SvarFyra>
+      <RättSvar>Förmånlig ränta</RättSvar>
+      <Markeratsvar>Förmånlig ränta</Markeratsvar>
+    </Fråga>
+    <Fråga id="14">
+      <Text>Hur klassas ett företag som omsätter mindre än kravet för kategori C?</Text>
+      <SvarEtt>D eftersom det kommer efter C</SvarEtt>
+      <SvarTvå>De kategoriseras som small</SvarTvå>
+      <SvarTre>E kunder eftersom de är den minsta kategorin</SvarTre>
+      <SvarFyra>De har ingen kategori</SvarFyra>
+      <RättSvar>De kategoriseras som small</RättSvar>
+      <Markeratsvar>E kunder eftersom de är den minsta kategorin</Markeratsvar>
+    </Fråga>
+    <Fråga id="12">
+      <Text>Viken av JE-Bankens produkter skall du rekommendera en B-kund</Text>
+      <SvarEtt>Large företagspaket</SvarEtt>
+      <SvarTvå>Inget utan det anpassas utifrån kundens behov</SvarTvå>
+      <SvarTre>Enterprise företagspaket</SvarTre>
+      <SvarFyra>Medium företagspaket</SvarFyra>
+      <RättSvar>Medium företagspaket</RättSvar>
+      <Markeratsvar>Large företagspaket</Markeratsvar>
+    </Fråga>
+    <Fråga id="20">
+      <Text>Vilken roll har huvudansvar för en A-kunds kundkonto?</Text>
+      <SvarEtt>Key account manager</SvarEtt>
+      <SvarTvå>Account manager</SvarTvå>
+      <SvarTre>Business analyst</SvarTre>
+      <SvarFyra>Delivery manager</SvarFyra>
+      <RättSvar>Key account manager</RättSvar>
+      <Markeratsvar>Delivery manager</Markeratsvar>
+    </Fråga>
+  </Kategori>
+  <Kategori id="Ekonomi">
+    <Fråga id="19">
+      <Text>Hur ofta bör strategimöte hållas med en A-kund per år?</Text>
+      <SvarEtt>Varannat år</SvarEtt>
+      <SvarTvå>2 gånger</SvarTvå>
+      <SvarTre>4 gånger</SvarTre>
+      <SvarFyra>1 gång</SvarFyra>
+      <RättSvar>1 gång</RättSvar>
+      <Markeratsvar>Varannat år</Markeratsvar>
+    </Fråga>
+    <Fråga id="8">
+      <Text>Vad behöver du tänka på för att bidra till en trivsam arbetsmiljö?</Text>
+      <SvarEtt>Att vara hel och ren, hålla en trevlig ton mot både kunder och kollegor och hjälpa till när någon frågar</SvarEtt>
+      <SvarTvå>Att inte störa dina kollegor i onödan</SvarTvå>
+      <SvarTre>Bjuda på fika regelbundet</SvarTre>
+      <SvarFyra>Se till att sköta sitt eget arbete</SvarFyra>
+      <RättSvar>Att vara hel och ren, hålla en trevlig ton mot både kunder och kollegor och hjälpa till när någon frågar</RättSvar>
+      <Markeratsvar>Bjuda på fika regelbundet</Markeratsvar>
+    </Fråga>
+    <Fråga id="13">
+      <Text>Hur mycket behöver ett företag omsätta för att klassas som A, B och C kund?</Text>
+      <SvarEtt>A = 1,5 miljard, B = 600 miljoner och C = 200 miljoner</SvarEtt>
+      <SvarTvå>A = 1 miljard, B = 500 miljoner och C = 100 miljoner</SvarTvå>
+      <SvarTre>A = 1 miljard, B = 500 miljoner och C = 250 miljoner</SvarTre>
+      <SvarFyra>A = 500 miljoner, B = 250 miljoner och C = 50 miljoner</SvarFyra>
+      <RättSvar>A = 1 miljard, B = 500 miljoner och C = 100 miljoner</RättSvar>
+      <Markeratsvar>A = 500 miljoner, B = 250 miljoner och C = 50 miljoner</Markeratsvar>
+    </Fråga>
+    <Fråga id="5">
+      <Text>Du har tystnadsplikt mot dina kunder. Finns det undantag då du kan diskutera information om kunden med någon annan?</Text>
+      <SvarEtt>Din kund följer inte lagen</SvarEtt>
+      <SvarTvå>Din kund är otrevlig</SvarTvå>
+      <SvarTre>Du har alltid möjlighet att diskutera din kund med dina kollegor på din avdelning då ni alla har tystnadsplikt</SvarTre>
+      <SvarFyra>Nej du får aldrig diskutera din kund med någon annan</SvarFyra>
+      <RättSvar>Du har alltid möjlighet att diskutera din kund med dina kollegor på din avdelning då ni alla har tystnadsplikt</RättSvar>
+      <Markeratsvar>Du har alltid möjlighet att diskutera din kund med dina kollegor på din avdelning då ni alla har tystnadsplikt</Markeratsvar>
+    </Fråga>
+  </Kategori>
+</Prov>
