@@ -238,9 +238,8 @@ namespace kompetensportalen.classes
             Dictionary<string, string> myParams = new Dictionary<string, string>();
 
             myParams.Add("@uname", user);
+            string sql = "select distinct on (\"username\") * from examresult WHERE username = @uname ORDER BY username, date DESC";
 
-            string sql = "select * from examresult where username = @uname";
-            
             dt = db.Select(sql, myParams);
 
             return dt;
