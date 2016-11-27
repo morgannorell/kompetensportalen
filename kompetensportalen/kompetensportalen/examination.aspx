@@ -22,7 +22,7 @@
             <h1 class="qnbr" id="H1" runat="server"><center>Välkommen!</center></h1>
             <div id="text" runat="server">
                 <p><center>När du trycker på starta test har du 30 minuter på dig att slutföra testet. Hinner du inte klart i tid blir du automatiskt underkänd.</center></p>
-                    <p><i><center>Typ: Licenseringstest</center></i></p>
+                <center><asp:Label ID="typeOfExam" runat="server" Text="Label"></asp:Label></center>
             </div>
             
             <asp:Button ID="btnNext" runat="server" Text="Nästa fråga" OnClick="btnNext_Click" CssClass="exam-button"/>

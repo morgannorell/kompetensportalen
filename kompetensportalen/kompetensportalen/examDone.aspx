@@ -5,9 +5,9 @@
     <form runat="server">
         <div class="CorrectExam">
             <div class="examDone" runat="server">
-            <asp:Label ID="Label1" runat="server" Text="Label" Visible="false" CssClass="label"></asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Label" CssClass="label"></asp:Label>
 
-            <asp:Table ID="ExamTable" runat="server" CellPadding="5" CellSpacing="5" BackColor="#ffffff" CssClass="table" Width="800px" Visible="false">
+            <asp:Table ID="ExamTable" runat="server" CellPadding="5" CellSpacing="5" BackColor="#ffffff" CssClass="table" Width="800px">
             <asp:TableHeaderRow runat="server" Font-Bold="true" BackColor="#62983c" ForeColor="#ffffff">
             <asp:TableHeaderCell>#</asp:TableHeaderCell>
             <asp:TableHeaderCell>Fråga</asp:TableHeaderCell>
@@ -16,7 +16,7 @@
             </asp:TableHeaderRow>
             </asp:Table>
 
-            <asp:Button ID="Button1" runat="server" Text="Rätta test" OnClick="Button1_Click" Visible="true" CssClass="exam-button"/>
+            <asp:Button ID="Button1" runat="server" Text="Återvänd till startsidan" OnClick="Button1_Click" CssClass="exam-button"/>
                 </div>
         </div>
     </form>

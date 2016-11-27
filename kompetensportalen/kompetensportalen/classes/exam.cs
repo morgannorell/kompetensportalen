@@ -204,17 +204,18 @@ namespace kompetensportalen.classes
         //    //return dt;
         //}
 
-        public bool xmlToDb(string username, string xml)
+        public bool xmlToDb(string username, string xml, DateTime today)
         {
             Postgre conn = new Postgre();
 
-            string sql = "INSERT INTO examresult(username, xml) VALUES(@username, @xml)";
+            string sql = "INSERT INTO examresult(username, xml, date) VALUES(@username, @xml, @today)";
 
             try
             {
                 conn._cmd = new NpgsqlCommand(sql, conn._conn);
                 conn._cmd.Parameters.Add(new NpgsqlParameter("xml", xml));
                 conn._cmd.Parameters.Add(new NpgsqlParameter("username", username));
+                conn._cmd.Parameters.Add(new NpgsqlParameter("today", today));
                 if (conn._cmd.ExecuteNonQuery() == 1)
                 {
                     return true;

@@ -102,5 +102,31 @@ namespace kompetensportalen.classes
             }
         }
 
+        public bool updateLicense(string username, bool licensed)
+        {
+            Postgre conn = new Postgre();
+
+            string sql = "UPDATE person SET licensed = @licensed WHERE username = @username";
+
+            try
+            {
+                conn._cmd = new NpgsqlCommand(sql, conn._conn);
+                conn._cmd.Parameters.Add(new NpgsqlParameter("licensed", licensed));
+                conn._cmd.Parameters.Add(new NpgsqlParameter("username", username));
+                if (conn._cmd.ExecuteNonQuery() == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (NpgsqlException e)
+            {
+                Debug.Write(e);
+                return false;
+            }
+        }
+
+
+
     }
 }
