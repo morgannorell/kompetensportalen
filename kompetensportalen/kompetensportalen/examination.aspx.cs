@@ -32,12 +32,14 @@ namespace kompetensportalen
                 if (whichQuestions == true )
                 {
                     int getExam = 1;
+                    typeOfExam.Text = "Typ: Licensieringstest";
                     questionIDs = examina.GetQuestionIDs(getExam);
                     Session["questionIDs"] = questionIDs;
                 }
                 else
                 {
                     int getExam = 2;
+                    typeOfExam.Text = "Typ: Årligt kunskapstest";
                     questionIDs = examina.GetQuestionIDs(getExam);
                     Session["questionIDs"] = questionIDs;
                 }
