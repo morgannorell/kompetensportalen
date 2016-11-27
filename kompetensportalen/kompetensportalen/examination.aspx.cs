@@ -31,15 +31,15 @@ namespace kompetensportalen
                 bool whichQuestions = user.GetLicenseApproved((string)Session["username"]);
                 if (whichQuestions == true )
                 {
-                    int getExam = 1;
-                    typeOfExam.Text = "Typ: Licensieringstest";
+                    int getExam = 2;
+                    typeOfExam.Text = "Typ: Årligt kunskapstest";
                     questionIDs = examina.GetQuestionIDs(getExam);
                     Session["questionIDs"] = questionIDs;
                 }
                 else
                 {
-                    int getExam = 2;
-                    typeOfExam.Text = "Typ: Årligt kunskapstest";
+                    int getExam = 1;
+                    typeOfExam.Text = "Typ: Licensieringstest";
                     questionIDs = examina.GetQuestionIDs(getExam);
                     Session["questionIDs"] = questionIDs;
                 }

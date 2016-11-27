@@ -93,7 +93,7 @@ namespace kompetensportalen.classes
         {
             Postgre conn = new Postgre();
             string sql = "";
-            if (examType == 1)
+            if (examType == 1 || examType == null)
             {
                 sql = "select question_id from exam order by random() limit 25";
             }
