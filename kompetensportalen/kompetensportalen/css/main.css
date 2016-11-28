@@ -145,3 +145,29 @@ div.leaf-login {
 	margin: 10px 0 0 10px;
 }
 
+/* TABLE */
+
+.showExamTable {
+    Padding: 5px;
+    background-color: #fff;
+    width: 750px;
+}
+
+/*table.showExamTable tr {
+    background-color: #BDBDBD;
+}*/
+
+.showExamTable td {
+    background-color: #BDBDBD;
+    padding: 5px;
+}
+
+.tdcorrect {
+    background-color: #62983c;
+    color: #fff;
+}
+
+.tdfail {
+    background-color: #F44336;
+    color: #fff;
+}

@@ -19,9 +19,10 @@ namespace kompetensportalen
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["myparam"] != null)
+            {
                 username = Request.QueryString["myparam"];
-
-            LoadTest(username);
+                LoadTest(username);
+            }
         }
 
         public void LoadTest(string username)
@@ -41,42 +42,37 @@ namespace kompetensportalen
             using (var reader = new StringReader(xml))
             {
                 ReadTest item = (ReadTest)ser.Deserialize(reader);
-                int total = 0;
-                TableRow tr = null;
+                int total = 1;
+                //TableRow tr = null;
 
-                string kat = "";
-                int i = 1;
-                int countCorrectAnswers = 0;
-
-                //HtmlGenericControl div = new HtmlGenericControl("div class=\"mylist\"" +
-                //    " id=\"" + row["username"].ToString() + "\"" + " runat=\"server\"");
-                //div.InnerHtml = "<a href=\"showExam.aspx?myparam=" + row["username"].ToString() + "\">" + row["firstname"].ToString() + " " + row["lastname"].ToString() + "</a><br /><br />";
-                //userlist.Controls.Add(div);
+                //string kat = "";
+                //int i = 1;
+                //int countCorrectAnswers = 0;
 
                 HtmlGenericControl div = new HtmlGenericControl("div");
-                div.InnerHtml = "<table CellPadding=\"5\" CellSpacing=\"5\" BackColor=\"#ffffff\" CssClass=\"table\" Width=\"800px\">";
+                div.InnerHtml = "<table Class=\"showExamTable\">"; // CellPadding=\"5\" CellSpacing=\"5\" BackColor=\"#ffffff\" CssClass=\"table\" Width=\"800px\">";
+                div.InnerHtml += "<tr><th>#</th><th>Fråga</th><th>Rätt svar</th><th>Ditt svar</th></tr>";
 
                 foreach (var it in item.Kategori)
                 {
-                    //kat = it.Kategorityp;
-                    //Console.WriteLine("Antal frågor: {0}", it.Fråga.Count);
-                    //total += it.Fråga.Count;
-                    //Console.WriteLine();
-
-                    
+                    div.InnerHtml += "<tr><td colspan=\"4\">Kategori: " + it.Kategorityp + "</td></tr>";
 
                     foreach (var kategori in it.Fråga)
                     {
-
                         div.InnerHtml += "<tr>";
-
+                        div.InnerHtml += "<td>" + total + "</td>";
                         div.InnerHtml += "<td>" + kategori.Text + "</td>";
                         div.InnerHtml += "<td>" + kategori.RättSvar + "</td>";
-                        div.InnerHtml += "<td>" + kategori.MarkeratSvar + "</td>";
 
+                        if (kategori.RättSvar == kategori.MarkeratSvar)
+                            div.InnerHtml += "<td class\"tdcorrect\">";
+                        else
+                            div.InnerHtml += "<td class\"tdfail\">";
+
+                        div.InnerHtml += kategori.MarkeratSvar + "</td>";
                         div.InnerHtml += "</tr>";
 
-                        //    tr = new TableRow();
+                        total++;
 
                         //TableCell questionNumber = new TableCell();
                         //TableCell question = new TableCell();
@@ -122,10 +118,8 @@ namespace kompetensportalen
                     }
                     
                 }
-
                 div.InnerHtml += "</table>";
                 test.Controls.Add(div);
-                //xmlq.InnerHtml = kat;
             }                          
         }
     }
