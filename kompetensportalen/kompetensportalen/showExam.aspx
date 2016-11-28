@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <form runat="server">
     <div class="CorrectExam">
         <div class="examDone" runat="server">
             <asp:Label ID="Label1" runat="server" Text="Label" Visible="false" CssClass="label"></asp:Label>
@@ -15,11 +16,15 @@
             </asp:TableHeaderRow>
             </asp:Table>
 
-            <div id="xmlq" runat="server"></div>
+            <div id="test" runat="server">
 
-            <form runat="server">
-            <asp:Button ID="btnBack" runat="server" Text="Tillbaka" OnClick="btnBack_Click" Visible="true" CssClass="exam-button"/>
-            </form>
+
+            </div>
+
+
+            <asp:Button ID="btnBack" runat="server" Text="Tillbaka" OnClientClick="javascript:history.back(1); return false;" Visible="true" CssClass="exam-button"/>
+
          </div>
      </div>
+     </form>
 </asp:Content>

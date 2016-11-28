@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Xml.Serialization;
 
@@ -47,75 +48,85 @@ namespace kompetensportalen
                 int i = 1;
                 int countCorrectAnswers = 0;
 
+                //HtmlGenericControl div = new HtmlGenericControl("div class=\"mylist\"" +
+                //    " id=\"" + row["username"].ToString() + "\"" + " runat=\"server\"");
+                //div.InnerHtml = "<a href=\"showExam.aspx?myparam=" + row["username"].ToString() + "\">" + row["firstname"].ToString() + " " + row["lastname"].ToString() + "</a><br /><br />";
+                //userlist.Controls.Add(div);
+
+                HtmlGenericControl div = new HtmlGenericControl("div");
+                div.InnerHtml = "<table CellPadding=\"5\" CellSpacing=\"5\" BackColor=\"#ffffff\" CssClass=\"table\" Width=\"800px\">";
+
                 foreach (var it in item.Kategori)
                 {
                     //kat = it.Kategorityp;
                     //Console.WriteLine("Antal frågor: {0}", it.Fråga.Count);
                     //total += it.Fråga.Count;
                     //Console.WriteLine();
+
+                    
+
                     foreach (var kategori in it.Fråga)
                     {
-                        //Console.WriteLine("Frågeid: {0}", kategori.Frågaid);
-                        //Console.WriteLine("Text:");
-                        //Console.WriteLine(kategori.Text);
-                        //Console.WriteLine();
+
+                        div.InnerHtml += "<tr>";
+
+                        div.InnerHtml += "<td>" + kategori.Text + "</td>";
+                        div.InnerHtml += "<td>" + kategori.RättSvar + "</td>";
+                        div.InnerHtml += "<td>" + kategori.MarkeratSvar + "</td>";
+
+                        div.InnerHtml += "</tr>";
+
+                        //    tr = new TableRow();
+
+                        //TableCell questionNumber = new TableCell();
+                        //TableCell question = new TableCell();
+                        //TableCell correctAnswer = new TableCell();
+                        //TableCell selectedAnswer = new TableCell();
 
 
-                        tr = new TableRow();
+                        //questionNumber.Text = i++.ToString();
+                        //questionNumber.BackColor = System.Drawing.Color.FromName("#BDBDBD");
+                        //question.Text = kategori.Text;
+                        //question.BackColor = System.Drawing.Color.FromName("#BDBDBD");
+                        //selectedAnswer.Text = kategori.MarkeratSvar;
+                        //correctAnswer.Text = kategori.RättSvar;
+                        //correctAnswer.BackColor = System.Drawing.Color.FromName("#BDBDBD");
 
-                        TableCell questionNumber = new TableCell();
-                        TableCell question = new TableCell();
-                        TableCell correctAnswer = new TableCell();
-                        TableCell selectedAnswer = new TableCell();
+                        //if (selectedAnswer.Text == correctAnswer.Text)
+                        //{
+                        //    selectedAnswer.BackColor = System.Drawing.Color.FromName("#62983c");
+                        //    selectedAnswer.ForeColor = System.Drawing.Color.FromName("#ffffff");
+                        //    countCorrectAnswers++;
+                        //}
+                        //else
+                        //{
+                        //    selectedAnswer.BackColor = System.Drawing.Color.FromName("#F44336");
+                        //    selectedAnswer.ForeColor = System.Drawing.Color.FromName("#ffffff");
+                        //}
 
+                        //tr.Cells.Add(questionNumber);
+                        //tr.Cells.Add(question);
+                        //tr.Cells.Add(correctAnswer);
+                        //tr.Cells.Add(selectedAnswer);
 
-                        questionNumber.Text = i++.ToString();
-                        questionNumber.BackColor = System.Drawing.Color.FromName("#BDBDBD");
-                        question.Text = kategori.Text;
-                        question.BackColor = System.Drawing.Color.FromName("#BDBDBD");
-                        selectedAnswer.Text = kategori.MarkeratSvar;
-                        correctAnswer.Text = kategori.RättSvar;
-                        correctAnswer.BackColor = System.Drawing.Color.FromName("#BDBDBD");
-
-                        if (selectedAnswer.Text == correctAnswer.Text)
-                        {
-                            selectedAnswer.BackColor = System.Drawing.Color.FromName("#62983c");
-                            selectedAnswer.ForeColor = System.Drawing.Color.FromName("#ffffff");
-                            countCorrectAnswers++;
-                        }
-                        else
-                        {
-                            selectedAnswer.BackColor = System.Drawing.Color.FromName("#F44336");
-                            selectedAnswer.ForeColor = System.Drawing.Color.FromName("#ffffff");
-                        }
-
-                        tr.Cells.Add(questionNumber);
-                        tr.Cells.Add(question);
-                        tr.Cells.Add(correctAnswer);
-                        tr.Cells.Add(selectedAnswer);
-
-                        if (countCorrectAnswers >= ((i - 1) * 0.7))
-                        {
-                            Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (i - 1).ToString() + " frågor. Du är godkänd!";
-                        }
-                        else
-                        {
-                            Label1.ForeColor = System.Drawing.Color.FromName("#F44336");
-                            Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (i - 1).ToString() + " frågor. Du är tyvärr underkänd!";
-                        }
-                        showExamTable.Rows.Add(tr);
+                        //if (countCorrectAnswers >= ((i - 1) * 0.7))
+                        //{
+                        //    Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (i - 1).ToString() + " frågor. Du är godkänd!";
+                        //}
+                        //else
+                        //{
+                        //    Label1.ForeColor = System.Drawing.Color.FromName("#F44336");
+                        //    Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (i - 1).ToString() + " frågor. Du är tyvärr underkänd!";
+                        //}
+                        //showExamTable.Rows.Add(tr);
                     }
+                    
                 }
+
+                div.InnerHtml += "</table>";
+                test.Controls.Add(div);
                 //xmlq.InnerHtml = kat;
-            }
-                
-
-            
-        }
-
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("adminstart.aspx");
+            }                          
         }
     }
 }
