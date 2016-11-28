@@ -44,10 +44,12 @@ namespace kompetensportalen
                 TableRow tr = null;
 
                 string kat = "";
+                int i = 1;
+                int countCorrectAnswers = 0;
 
                 foreach (var it in item.Kategori)
                 {
-                    kat = it.Kategorityp;
+                    //kat = it.Kategorityp;
                     //Console.WriteLine("Antal frågor: {0}", it.Fråga.Count);
                     //total += it.Fråga.Count;
                     //Console.WriteLine();
@@ -59,56 +61,52 @@ namespace kompetensportalen
                         //Console.WriteLine();
 
 
-                        //tr = new TableRow();
+                        tr = new TableRow();
 
-                        //TableCell questionNumber = new TableCell();
-                        //TableCell question = new TableCell();
-                        //TableCell correctAnswer = new TableCell();
-                        //TableCell selectedAnswer = new TableCell();
+                        TableCell questionNumber = new TableCell();
+                        TableCell question = new TableCell();
+                        TableCell correctAnswer = new TableCell();
+                        TableCell selectedAnswer = new TableCell();
 
 
-                        //questionNumber.Text = i++.ToString();
-                        //questionNumber.BackColor = System.Drawing.Color.FromName("#BDBDBD");
-                        //question.Text = n["Text"].InnerText;
-                        //question.BackColor = System.Drawing.Color.FromName("#BDBDBD");
-                        //selectedAnswer.Text = n["Markeratsvar"].InnerText;
-                        //correctAnswer.Text = n["RättSvar"].InnerText;
-                        //correctAnswer.BackColor = System.Drawing.Color.FromName("#BDBDBD");
+                        questionNumber.Text = i++.ToString();
+                        questionNumber.BackColor = System.Drawing.Color.FromName("#BDBDBD");
+                        question.Text = kategori.Text;
+                        question.BackColor = System.Drawing.Color.FromName("#BDBDBD");
+                        selectedAnswer.Text = kategori.MarkeratSvar;
+                        correctAnswer.Text = kategori.RättSvar;
+                        correctAnswer.BackColor = System.Drawing.Color.FromName("#BDBDBD");
 
-                        //if (selectedAnswer.Text == correctAnswer.Text)
-                        //{
-                        //    selectedAnswer.BackColor = System.Drawing.Color.FromName("#62983c");
-                        //    selectedAnswer.ForeColor = System.Drawing.Color.FromName("#ffffff");
-                        //    countCorrectAnswers++;
-                        //}
-                        //else
-                        //{
-                        //    selectedAnswer.BackColor = System.Drawing.Color.FromName("#F44336");
-                        //    selectedAnswer.ForeColor = System.Drawing.Color.FromName("#ffffff");
-                        //}
+                        if (selectedAnswer.Text == correctAnswer.Text)
+                        {
+                            selectedAnswer.BackColor = System.Drawing.Color.FromName("#62983c");
+                            selectedAnswer.ForeColor = System.Drawing.Color.FromName("#ffffff");
+                            countCorrectAnswers++;
+                        }
+                        else
+                        {
+                            selectedAnswer.BackColor = System.Drawing.Color.FromName("#F44336");
+                            selectedAnswer.ForeColor = System.Drawing.Color.FromName("#ffffff");
+                        }
 
-                        //tr.Cells.Add(questionNumber);
-                        //tr.Cells.Add(question);
-                        //tr.Cells.Add(correctAnswer);
-                        //tr.Cells.Add(selectedAnswer);
+                        tr.Cells.Add(questionNumber);
+                        tr.Cells.Add(question);
+                        tr.Cells.Add(correctAnswer);
+                        tr.Cells.Add(selectedAnswer);
 
-                        //if (countCorrectAnswers >= ((i - 1) * 0.7))
-                        //{
-                        //    Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (i - 1).ToString() + " frågor. Du är godkänd!";
-                        //    User pass = new User();
-                        //    pass.updateLicense((string)Session["Username"], true);
-                        //}
-                        //else
-                        //{
-                        //    Label1.ForeColor = System.Drawing.Color.FromName("#F44336");
-                        //    Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (i - 1).ToString() + " frågor. Du är tyvärr underkänd!";
-                        //    User fail = new User();
-                        //    fail.updateLicense((string)Session["Username"], false);
-                        //}
-                        //ExamTable.Rows.Add(tr);
+                        if (countCorrectAnswers >= ((i - 1) * 0.7))
+                        {
+                            Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (i - 1).ToString() + " frågor. Du är godkänd!";
+                        }
+                        else
+                        {
+                            Label1.ForeColor = System.Drawing.Color.FromName("#F44336");
+                            Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (i - 1).ToString() + " frågor. Du är tyvärr underkänd!";
+                        }
+                        showExamTable.Rows.Add(tr);
                     }
                 }
-                xmlq.InnerHtml = kat;
+                //xmlq.InnerHtml = kat;
             }
                 
 
@@ -117,7 +115,7 @@ namespace kompetensportalen
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("adminstart.aspx");
         }
     }
 }

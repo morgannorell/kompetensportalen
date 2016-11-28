@@ -6,7 +6,7 @@
         <div class="examDone" runat="server">
             <asp:Label ID="Label1" runat="server" Text="Label" Visible="false" CssClass="label"></asp:Label>
 
-            <asp:Table ID="ExamTable" runat="server" CellPadding="5" CellSpacing="5" BackColor="#ffffff" CssClass="table" Width="800px" Visible="false">
+            <asp:Table ID="showExamTable" runat="server" CellPadding="5" CellSpacing="5" BackColor="#ffffff" CssClass="table" Width="800px" Visible="false">
             <asp:TableHeaderRow runat="server" Font-Bold="true" BackColor="#62983c" ForeColor="#ffffff">
             <asp:TableHeaderCell>#</asp:TableHeaderCell>
             <asp:TableHeaderCell>Fråga</asp:TableHeaderCell>
