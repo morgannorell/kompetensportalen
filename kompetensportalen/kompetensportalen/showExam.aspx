@@ -4,16 +4,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form runat="server">
     <div class="CorrectExam">
-        <div class="examDone" runat="server">
-            <asp:Label ID="Label1" runat="server" Text="Label" Visible="false" CssClass="label"></asp:Label>
-
-            <div id="test" runat="server">
-
+        <div class="examDone" runat="server">            
+            <div id="testTitle" runat="server">
 
             </div>
+            <div id="testresult" runat="server">
 
+            </div>
             <asp:Button ID="btnBack" runat="server" Text="Tillbaka" OnClientClick="javascript:history.back(1); return false;" Visible="true" CssClass="exam-button"/>
-
          </div>
      </div>
      </form>

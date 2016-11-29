@@ -108,6 +108,16 @@ div.countdownTimer{
     color: #62983c;
 }
 
+label-sm {
+    display: block;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'Yu Gothic';
+    font-size: 15px;
+    color: #62983c;
+}
+
 div.category{
     display: block;
     margin: 0 auto;
@@ -157,17 +167,31 @@ div.leaf-login {
     background-color: #BDBDBD;
 }*/
 
-.showExamTable td {
-    background-color: #BDBDBD;
+.showExamTable td {   
     padding: 5px;
 }
 
+td {
+    background-color: #BDBDBD;
+}
+
 .tdcorrect {
+    
     background-color: #62983c;
     color: #fff;
 }
 
 .tdfail {
     background-color: #F44336;
+    color: #fff;
+}
+
+.kategory {
+    font-variant-caps: small-caps;
+    font-weight:bold;
+}
+
+th {
+    background-color: #000;
     color: #fff;
 }

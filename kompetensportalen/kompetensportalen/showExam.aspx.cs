@@ -42,20 +42,20 @@ namespace kompetensportalen
             using (var reader = new StringReader(xml))
             {
                 ReadTest item = (ReadTest)ser.Deserialize(reader);
-                int total = 1;
-                //TableRow tr = null;
-
-                //string kat = "";
-                //int i = 1;
-                //int countCorrectAnswers = 0;
+                int total = 0;                
+                int countCorrectAnswers = 0; // Totalt antal rätt svar
+                int etik = 0;
+                int produkt = 0;
+                int ekonomi = 0;                
 
                 HtmlGenericControl div = new HtmlGenericControl("div");
-                div.InnerHtml = "<table Class=\"showExamTable\">"; // CellPadding=\"5\" CellSpacing=\"5\" BackColor=\"#ffffff\" CssClass=\"table\" Width=\"800px\">";
+                div.InnerHtml = "<table Class=\"showExamTable\">";
                 div.InnerHtml += "<tr><th>#</th><th>Fråga</th><th>Rätt svar</th><th>Ditt svar</th></tr>";
 
                 foreach (var it in item.Kategori)
                 {
-                    div.InnerHtml += "<tr><td colspan=\"4\">Kategori: " + it.Kategorityp + "</td></tr>";
+                    div.InnerHtml += "<tr><td colspan=\"2\" class=\"kategory\">Kategori: " + it.Kategorityp + "</td>";
+                    div.InnerHtml += "<td colspan=\"2\" class=\"kategory\">frågor i kategori: " + it.Fråga.Count + "</td></tr>";
 
                     foreach (var kategori in it.Fråga)
                     {
@@ -65,45 +65,23 @@ namespace kompetensportalen
                         div.InnerHtml += "<td>" + kategori.RättSvar + "</td>";
 
                         if (kategori.RättSvar == kategori.MarkeratSvar)
-                            div.InnerHtml += "<td class\"tdcorrect\">";
+                        {
+                            div.InnerHtml += "<td class=\"tdcorrect\">";
+                            countCorrectAnswers++;
+                            if (it.Kategorityp == "Etik")
+                                etik++;
+                            if (it.Kategorityp == "Produkt")
+                                produkt++;
+                            if (it.Kategorityp == "Ekonomi")
+                                ekonomi++;
+                        }
                         else
-                            div.InnerHtml += "<td class\"tdfail\">";
+                            div.InnerHtml += "<td class=\"tdfail\">";
 
                         div.InnerHtml += kategori.MarkeratSvar + "</td>";
                         div.InnerHtml += "</tr>";
 
-                        total++;
-
-                        //TableCell questionNumber = new TableCell();
-                        //TableCell question = new TableCell();
-                        //TableCell correctAnswer = new TableCell();
-                        //TableCell selectedAnswer = new TableCell();
-
-
-                        //questionNumber.Text = i++.ToString();
-                        //questionNumber.BackColor = System.Drawing.Color.FromName("#BDBDBD");
-                        //question.Text = kategori.Text;
-                        //question.BackColor = System.Drawing.Color.FromName("#BDBDBD");
-                        //selectedAnswer.Text = kategori.MarkeratSvar;
-                        //correctAnswer.Text = kategori.RättSvar;
-                        //correctAnswer.BackColor = System.Drawing.Color.FromName("#BDBDBD");
-
-                        //if (selectedAnswer.Text == correctAnswer.Text)
-                        //{
-                        //    selectedAnswer.BackColor = System.Drawing.Color.FromName("#62983c");
-                        //    selectedAnswer.ForeColor = System.Drawing.Color.FromName("#ffffff");
-                        //    countCorrectAnswers++;
-                        //}
-                        //else
-                        //{
-                        //    selectedAnswer.BackColor = System.Drawing.Color.FromName("#F44336");
-                        //    selectedAnswer.ForeColor = System.Drawing.Color.FromName("#ffffff");
-                        //}
-
-                        //tr.Cells.Add(questionNumber);
-                        //tr.Cells.Add(question);
-                        //tr.Cells.Add(correctAnswer);
-                        //tr.Cells.Add(selectedAnswer);
+                        total++;                                                
 
                         //if (countCorrectAnswers >= ((i - 1) * 0.7))
                         //{
@@ -119,7 +97,16 @@ namespace kompetensportalen
                     
                 }
                 div.InnerHtml += "</table>";
-                test.Controls.Add(div);
+                testresult.Controls.Add(div);
+
+                HtmlGenericControl divTitle = new HtmlGenericControl("div");
+                divTitle.InnerHtml = "<div class\"label\">Du har svarat på " + total + " frågot och svarade rätt på " + countCorrectAnswers + " frågor.</div>";
+                divTitle.InnerHtml += "<div class\"label-sm\">I kategorin Etik svarade du rätt på " + etik + " frågor.</div>";
+                divTitle.InnerHtml += "<div class\"label-sm\">I kategorin Produkt svarade du rätt på " + produkt + " frågor.</div>";
+                divTitle.InnerHtml += "<div class\"label-sm\">I kategorin Ekonomi svarade du rätt på " + ekonomi + " frågor.</div>";
+
+                testTitle.Controls.Add(divTitle);
+                
             }                          
         }
     }
