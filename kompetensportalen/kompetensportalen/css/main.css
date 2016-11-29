@@ -108,11 +108,10 @@ div.countdownTimer{
     color: #62983c;
 }
 
-label-sm {
+.label-sm {
     display: block;
     margin: 0 auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     font-family: 'Yu Gothic';
     font-size: 15px;
     color: #62983c;
