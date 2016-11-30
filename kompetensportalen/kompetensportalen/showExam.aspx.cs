@@ -113,7 +113,7 @@ namespace kompetensportalen
                 int ekonomipercent = ekonomi * 100 / ekonomiTot;
 
                 bool succsess = false;
-                string 
+                //string 
 
                 // Test if test is successful
                 if ((totalpercent >= 70 && etikpercent >= 60) || (totalpercent >= 70 && produktpercent >= 60) || (totalpercent >= 70 && ekonomipercent >= 60)
