@@ -6,7 +6,9 @@
         <div class="CorrectExam">
             <div class="examDone" runat="server">
             <asp:Label ID="Label1" runat="server" Text="Label" CssClass="label"></asp:Label>
-
+                <asp:Label ID="Label2" runat="server" Text="Label" CssClass="label"></asp:Label>
+                <asp:Label ID="Label3" runat="server" Text="Label" CssClass="label"></asp:Label>
+                <asp:Label ID="Label4" runat="server" Text="Label" CssClass="label"></asp:Label>
             <asp:Table ID="ExamTable" runat="server" CellPadding="5" CellSpacing="5" BackColor="#ffffff" CssClass="table" Width="800px">
             <asp:TableHeaderRow runat="server" Font-Bold="true" BackColor="#62983c" ForeColor="#ffffff">
             <asp:TableHeaderCell>#</asp:TableHeaderCell>

@@ -213,22 +213,45 @@ namespace kompetensportalen
 
                 //HtmlGenericControl divTitle = new HtmlGenericControl("div");
 
-                //int totalpercent = countCorrectAnswers * 100 / total;
-                //int etikpercent = etik * 100 / etikTot;
-                //int produktpercent = produkt * 100 / produktTot;
-                //int ekonomipercent = ekonomi * 100 / ekonomiTot;
+                int totalpercent = countCorrectAnswers * 100 / total;
+                int etikpercent = etik * 100 / etikTot;
+                int produktpercent = produkt * 100 / produktTot;
+                int ekonomipercent = ekonomi * 100 / ekonomiTot;
 
-                //bool succsess = false;
+                bool succsess = false;
                 ////string 
 
-                //// Test if test is successful
-                //if ((totalpercent >= 70 && etikpercent >= 60) || (totalpercent >= 70 && produktpercent >= 60) || (totalpercent >= 70 && ekonomipercent >= 60)
-                //    || (etikpercent >= 60 && produktpercent >= 60) || (etikpercent >= 60 && ekonomipercent >= 60) || (produktpercent >= 60 && ekonomipercent >= 60))
-                //{
-                //    succsess = true;
+                // Test if test is successful
+                if (totalpercent >= 70 && etikpercent >= 60 && produktpercent >= 60 && ekonomipercent >= 60)
+                {
+                    succsess = true;
+                }
 
-                //}
+                if (succsess == true)
+                {
+                    Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (total - 1).ToString() + " frågor. Du är  godkänd!";
+                    Label2.Text = "Etik: " + etik + " av " + etikTot + ", " + etikpercent + "";
+                    Label3.Text = "Produkt: " + produkt + " av " + produktTot + ", " + produktpercent + "";
+                    Label4.Text = "Ekonomi: " + ekonomi + " av " + ekonomiTot + ", " + ekonomipercent + "";
 
+                    User pass = new User();
+                    pass.updateLicense((string)Session["username"], true);
+                }
+                else
+                {
+                    Label1.ForeColor = System.Drawing.Color.FromName("#F44336");
+                    Label2.ForeColor = System.Drawing.Color.FromName("#F44336");
+                    Label3.ForeColor = System.Drawing.Color.FromName("#F44336");
+                    Label4.ForeColor = System.Drawing.Color.FromName("#F44336");
+
+                    Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (total - 1).ToString() + " frågor. Du är underkänd!";
+                    Label2.Text = "Etik: " + etik + " av " + etikTot + ", " + etikpercent + "";
+                    Label3.Text = "Produkt: " + produkt + " av " + produktTot + ", " + produktpercent + "";
+                    Label4.Text = "Ekonomi: " + ekonomi + " av " + ekonomiTot + ", " + ekonomipercent + "";
+
+                    User fail = new User();
+                    fail.updateLicense((string)Session["username"], false);
+                }
 
                 //if (succsess == true)
                 //    divTitle.InnerHtml += "<div class=\"label\">Grattis du har klarat provet.</div>";
