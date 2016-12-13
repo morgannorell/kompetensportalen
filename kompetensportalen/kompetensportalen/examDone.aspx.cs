@@ -122,15 +122,20 @@ namespace kompetensportalen
                 {
                     tr2 = new TableRow();
 
+                    TableCell empt = new TableCell();
                     TableCell kat = new TableCell();
                     TableCell katnr = new TableCell();
-                    
+
+                    kat.Font.Bold = true;
+                    katnr.Font.Bold = true;
 
                     kat.Text = "Kategori: " + it.Kategorityp + "";
                     katnr.Text = "Frågor i kategori: " + it.Fråga.Count + "";
+                    katnr.ColumnSpan = 2;
                     //div.InnerHtml += "<tr><td></td><td class=\"kategory\">Kategori: " + it.Kategorityp + "</td>";
                     //div.InnerHtml += "<td colspan=\"2\" class=\"kategory\">frågor i kategori: " + it.Fråga.Count + "</td></tr>";
 
+                    tr2.Cells.Add(empt);
                     tr2.Cells.Add(kat);
                     tr2.Cells.Add(katnr);
 
@@ -230,9 +235,9 @@ namespace kompetensportalen
                 if (succsess == true)
                 {
                     Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (total - 1).ToString() + " frågor. Du är  godkänd!";
-                    Label2.Text = "Etik: " + etik + " av " + etikTot + ", " + etikpercent + "";
-                    Label3.Text = "Produkt: " + produkt + " av " + produktTot + ", " + produktpercent + "";
-                    Label4.Text = "Ekonomi: " + ekonomi + " av " + ekonomiTot + ", " + ekonomipercent + "";
+                    Label2.Text = "Etik: " + etik + " av " + etikTot + ", " + etikpercent + "%.";
+                    Label3.Text = "Produkt: " + produkt + " av " + produktTot + ", " + produktpercent + "%.";
+                    Label4.Text = "Ekonomi: " + ekonomi + " av " + ekonomiTot + ", " + ekonomipercent + "%.";
 
                     User pass = new User();
                     pass.updateLicense((string)Session["username"], true);
@@ -245,9 +250,9 @@ namespace kompetensportalen
                     Label4.ForeColor = System.Drawing.Color.FromName("#F44336");
 
                     Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (total - 1).ToString() + " frågor. Du är underkänd!";
-                    Label2.Text = "Etik: " + etik + " av " + etikTot + ", " + etikpercent + "";
-                    Label3.Text = "Produkt: " + produkt + " av " + produktTot + ", " + produktpercent + "";
-                    Label4.Text = "Ekonomi: " + ekonomi + " av " + ekonomiTot + ", " + ekonomipercent + "";
+                    Label2.Text = "Etik: " + etik + " av " + etikTot + ", " + etikpercent + "%.";
+                    Label3.Text = "Produkt: " + produkt + " av " + produktTot + ", " + produktpercent + "%.";
+                    Label4.Text = "Ekonomi: " + ekonomi + " av " + ekonomiTot + ", " + ekonomipercent + "%.";
 
                     User fail = new User();
                     fail.updateLicense((string)Session["username"], false);

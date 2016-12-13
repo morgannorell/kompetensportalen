@@ -117,6 +117,9 @@ namespace kompetensportalen
             bool correctAmountSelected = false;
             questionCounter++;
 
+            var questInList = (List<int>)Session["questionIDs"];
+            questcounter.Text = "Frågor kvar: "+ questInList.Count.ToString() +"";
+
             ScriptManager.RegisterStartupScript(this, GetType(), "Resume", "resumeCountdown()", true);
 
             XmlDocument doc = new XmlDocument();
@@ -225,6 +228,9 @@ namespace kompetensportalen
             GetNewQuestionAndAnswers();
             ScriptManager.RegisterStartupScript(this, GetType(), "Start", "startCountdown()", true);
             category.InnerText = "Kategori: " + xam.GetCategory((int)Session["rqID"]) + "";
+
+            var questInList = (List<int>)Session["questionIDs"];
+            questcounter.Text = "Frågor kvar: " + (questInList.Count+1).ToString() + "";
         }
 
         

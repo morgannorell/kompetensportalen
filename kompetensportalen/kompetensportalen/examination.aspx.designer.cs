@@ -22,6 +22,15 @@ namespace kompetensportalen {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// questcounter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label questcounter;
+        
+        /// <summary>
         /// qnbr control.
         /// </summary>
         /// <remarks>
