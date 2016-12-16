@@ -90,17 +90,6 @@ namespace kompetensportalen
                             ekonomiTot++;
 
                         total++;                                                
-
-                        //if (countCorrectAnswers >= ((i - 1) * 0.7))
-                        //{
-                        //    Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (i - 1).ToString() + " frågor. Du är godkänd!";
-                        //}
-                        //else
-                        //{
-                        //    Label1.ForeColor = System.Drawing.Color.FromName("#F44336");
-                        //    Label1.Text = "Du har svarat rätt på " + countCorrectAnswers.ToString() + " av " + (i - 1).ToString() + " frågor. Du är tyvärr underkänd!";
-                        //}
-                        //showExamTable.Rows.Add(tr);
                     }
                     
                 }
@@ -137,11 +126,8 @@ namespace kompetensportalen
                     divTitle.InnerHtml += "<div class=\"label-sm-fail\">I kategorin Etik svarade du rätt på " + etik + " frågor. " + etikpercent + " %</div>";
                     divTitle.InnerHtml += "<div class=\"label-sm-fail\">I kategorin Produkt svarade du rätt på " + produkt + " frågor. " + produktpercent + "%</div>";
                     divTitle.InnerHtml += "<div class=\"label-sm-fail\">I kategorin Ekonomi svarade du rätt på " + ekonomi + " frågor. " + ekonomipercent + "%</div>";
-                }
-                
-
-                testTitle.Controls.Add(divTitle);
-                
+                }                
+                testTitle.Controls.Add(divTitle);              
             }                          
         }
     }
