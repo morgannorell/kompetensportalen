@@ -27,7 +27,7 @@
                     <br />
                     <form runat="server">     
                         <asp:Button ID="btnStartExam" runat="server" Text="Vidare till testportalen" OnClick="btnStartExam_Click" CssClass="exam-button"/>                   
-                        <input type="button" name="Login" value="Tidigare testresultat" class="exam-button"/>
+                        <asp:Button ID="btnLastExam" runat="server" Text="Tidigare testresultat" OnClick="btnLastExam_Click" CssClass="exam-button"/>
                         
                     </form>
                 </div>

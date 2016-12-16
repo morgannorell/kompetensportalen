@@ -128,10 +128,15 @@ namespace kompetensportalen
 
                     kat.Font.Bold = true;
                     katnr.Font.Bold = true;
-
+                    
                     kat.Text = "Kategori: " + it.Kategorityp + "";
                     katnr.Text = "Frågor i kategori: " + it.Fråga.Count + "";
                     katnr.ColumnSpan = 2;
+
+                    empt.BackColor = System.Drawing.Color.FromName("#BDBDBD");
+                    kat.BackColor = System.Drawing.Color.FromName("#BDBDBD");
+                    katnr.BackColor = System.Drawing.Color.FromName("#BDBDBD");
+
                     //div.InnerHtml += "<tr><td></td><td class=\"kategory\">Kategori: " + it.Kategorityp + "</td>";
                     //div.InnerHtml += "<td colspan=\"2\" class=\"kategory\">frågor i kategori: " + it.Fråga.Count + "</td></tr>";
 
@@ -155,6 +160,9 @@ namespace kompetensportalen
                         correctAnswer.Text = kategori.RättSvar;
                         selectedAnswer.Text = kategori.MarkeratSvar;
 
+                        questionNumber.BackColor = System.Drawing.Color.FromName("#BDBDBD");
+                        question.BackColor = System.Drawing.Color.FromName("#BDBDBD");
+                        correctAnswer.BackColor = System.Drawing.Color.FromName("#BDBDBD");
 
                         //div.InnerHtml += "<tr>";
                         //div.InnerHtml += "<td>" + total + "</td>";

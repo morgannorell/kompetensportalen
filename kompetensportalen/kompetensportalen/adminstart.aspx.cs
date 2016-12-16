@@ -22,7 +22,7 @@ namespace kompetensportalen
             {
                 HtmlGenericControl div = new HtmlGenericControl("div class=\"mylist\"" + 
                     " id=\"" + row["username"].ToString() + "\"" + " runat=\"server\"");
-                div.InnerHtml = "<a class=\"showp\" href=\"showExam.aspx?myparam=" + row["username"].ToString() + "\">" + row["firstname"].ToString() + " " + row["lastname"].ToString() + "</a><br /><br />";
+                div.InnerHtml = "<a class=\"showp\" href=\"showExam.aspx?myparam=" + row["username"].ToString() + "\">" + row["firstname"].ToString() + " " + row["lastname"].ToString() + "</a>";
                 userlist.Controls.Add(div);
             }           
         }

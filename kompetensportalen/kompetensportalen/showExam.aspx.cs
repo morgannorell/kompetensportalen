@@ -55,8 +55,8 @@ namespace kompetensportalen
 
                 foreach (var it in item.Kategori)
                 {
-                    div.InnerHtml += "<tr><td></td><td class=\"kategory\">Kategori: " + it.Kategorityp + "</td>";
-                    div.InnerHtml += "<td colspan=\"2\" class=\"kategory\">frågor i kategori: " + it.Fråga.Count + "</td></tr>";
+                    div.InnerHtml += "<tr><td class=\"tdstd\"></td><td class=\"kategory tdstd\">Kategori: " + it.Kategorityp + "</td>";
+                    div.InnerHtml += "<td colspan=\"2\" class=\"kategory tdstd\">frågor i kategori: " + it.Fråga.Count + "</td></tr>";
 
                     foreach (var kategori in it.Fråga)
                     {

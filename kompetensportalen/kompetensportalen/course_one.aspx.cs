@@ -22,5 +22,10 @@ namespace kompetensportalen
         {
             Response.Redirect("examination.aspx");
         }
+
+        protected void btnLastExam_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("showExam.aspx?myparam=" + Session["username"]);
+        }
     }
 }

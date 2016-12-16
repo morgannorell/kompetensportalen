@@ -144,18 +144,24 @@ div.category{
     font: bold;
 }
 
-.showp {
-    display: block;
-    width: 200px;
-    height: 30px;
-    text-align:center;
-    margin:  auto;
-    padding: 0;
-    font: bold;
+.showp{
+    width: 75%;
+    color: yellow;
     background-color: #62983c;
-    border-color:#fff;
-    color: #fff;
+    border: 1px solid #62983c;
+    border-radius: 5px;
+    display: block;
+    padding: 10px 20px;
+    margin: 15px auto;
+    font-variant:small-caps;
+    text-align: center;   
+    margin-bottom: 15px;
 }
+
+a.showp:link { color: #fff; }
+a.showp:visited { color: #fff; }
+a.showp:hover { color: #fff; }
+a.showp:active { color: #fff; }
 
 div.exam-question h1{
     margin: 0;
@@ -193,10 +199,6 @@ div.leaf-login {
     background-color: #fff;
     width: 750px;
 }
-
-/*table.showExamTable tr {
-    background-color: #BDBDBD;
-}*/
 
 .showExamTable td {   
     padding: 5px;

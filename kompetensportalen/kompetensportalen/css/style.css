@@ -187,13 +187,13 @@ div.errorlogin {
 }
 
 div.mylist:hover{
-	opacity: .5;
+	opacity: .8;
     display: block;
-    margin-right: 35px;
 }
 
 hr.line {
-    margin-right: 35px;
+    /*margin-right: 35px; */
+    width: 95%;
 }
 
 

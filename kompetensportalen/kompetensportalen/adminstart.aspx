@@ -4,19 +4,23 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="article">
         <div class="examDone">
-            <div class="leaf-login"><img src="images/leaf.png" /></div>
-            <div class="center-left"><h2>Administration</h2></div>
-            <p><b>Såhär gör du!</b></p>
+            <div class="center"><h2>Administration</h2></div>
+            <div class="center"><p><b>Såhär gör du!</b></p>
             <p>På den här sidan kan du som administratör se
                 vilka som har gjort prov. Du kan även markera
                 en användare och sedan klicka på visa test för
                 att se användarens senast genomförda prov.
-            </p>          
+            </p></div>
             <form runat="server">
-                <div class="userlistTitle">Användare som genomfört test.<br />
+                <div class="userlistTitle center">Användare som genomfört test.<br />
                     Klicka på den användare som du vill se testresultat för.
-                </div><p></p><hr class="line" />
+                </div>
+                    <br/><hr class="line" /><br />
                 <div id="userlist" runat="server">                    
+                
+                </div>
+                <div>
+                    <br /><hr class="line" />
                 </div>
             </form>          
         </div>             
