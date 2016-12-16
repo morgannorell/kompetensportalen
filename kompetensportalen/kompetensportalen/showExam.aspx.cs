@@ -42,7 +42,7 @@ namespace kompetensportalen
             using (var reader = new StringReader(xml))
             {
                 ReadTest item = (ReadTest)ser.Deserialize(reader);
-                int total = 0;                
+                int total = 1;                
                 int countCorrectAnswers = 0; // Totalt antal rätt svar
                 int etik = 0, produkt = 0, ekonomi = 0;
                 int etikTot = 0, produktTot = 0, ekonomiTot = 0;
@@ -50,6 +50,8 @@ namespace kompetensportalen
                 HtmlGenericControl div = new HtmlGenericControl("div");
                 div.InnerHtml = "<table Class=\"showExamTable\">";
                 div.InnerHtml += "<tr><th>#</th><th>Fråga</th><th>Rätt svar</th><th>Ditt svar</th></tr>";
+
+                int totalpercent = 0, etikpercent = 0, produktpercent = 0, ekonomipercent = 0;
 
                 foreach (var it in item.Kategori)
                 {
@@ -59,9 +61,9 @@ namespace kompetensportalen
                     foreach (var kategori in it.Fråga)
                     {
                         div.InnerHtml += "<tr>";
-                        div.InnerHtml += "<td>" + total + "</td>";
-                        div.InnerHtml += "<td>" + kategori.Text + "</td>";
-                        div.InnerHtml += "<td>" + kategori.RättSvar + "</td>";
+                        div.InnerHtml += "<td class=\"tdstd\">" + total + "</td>";
+                        div.InnerHtml += "<td class=\"tdstd\">" + kategori.Text + "</td>";
+                        div.InnerHtml += "<td class=\"tdstd\">" + kategori.RättSvar + "</td>";
 
                         if (kategori.RättSvar == kategori.MarkeratSvar)
                         {
@@ -106,33 +108,37 @@ namespace kompetensportalen
                 testresult.Controls.Add(div);
 
                 HtmlGenericControl divTitle = new HtmlGenericControl("div");
-
-                int totalpercent = countCorrectAnswers * 100 / total;
-                int etikpercent = etik * 100 / etikTot;
-                int produktpercent = produkt * 100 / produktTot;
-                int ekonomipercent = ekonomi * 100 / ekonomiTot;
+                
+                if (total != 0) { totalpercent = countCorrectAnswers * 100 / total; }
+                if (etikTot != 0) { etikpercent = etik * 100 / etikTot; }
+                if (produktTot != 0) { produktpercent = produkt * 100 / produktTot; }
+                if (ekonomiTot != 0) { ekonomipercent = ekonomi * 100 / ekonomiTot; }
 
                 bool succsess = false;
-                //string 
 
                 // Test if test is successful
-                if ((totalpercent >= 70 && etikpercent >= 60) || (totalpercent >= 70 && produktpercent >= 60) || (totalpercent >= 70 && ekonomipercent >= 60)
-                    || (etikpercent >= 60 && produktpercent >= 60) || (etikpercent >= 60 && ekonomipercent >= 60) || (produktpercent >= 60 && ekonomipercent >= 60))
+                if (totalpercent >= 70 && etikpercent >= 60 && produktpercent >= 60 && ekonomipercent >= 60)
                 {
                     succsess = true;
 
                 }
-                    
-
                 if (succsess == true)
+                {
                     divTitle.InnerHtml += "<div class=\"label\">Grattis du har klarat provet.</div>";
+                    divTitle.InnerHtml += "<div class=\"label-sm\">Du har svarat på " + total + " frågot och svarade rätt på " + countCorrectAnswers + " frågor. " + totalpercent + "%</div>";
+                    divTitle.InnerHtml += "<div class=\"label-sm\">I kategorin Etik svarade du rätt på " + etik + " frågor. " + etikpercent + " %</div>";
+                    divTitle.InnerHtml += "<div class=\"label-sm\">I kategorin Produkt svarade du rätt på " + produkt + " frågor. " + produktpercent + "%</div>";
+                    divTitle.InnerHtml += "<div class=\"label-sm\">I kategorin Ekonomi svarade du rätt på " + ekonomi + " frågor. " + ekonomipercent + "%</div>";
+                }
                 else
-                    divTitle.InnerHtml += "<div class=\"label\">Du är tyvärr underkänd på provet.</div>";
-
-                divTitle.InnerHtml += "<div class=\"label-sm\">Du har svarat på " + total + " frågot och svarade rätt på " + countCorrectAnswers + " frågor." + totalpercent + "%</div>";
-                divTitle.InnerHtml += "<div class=\"label-sm\">I kategorin Etik svarade du rätt på " + etik + " frågor. " + etikpercent + " %</div>";
-                divTitle.InnerHtml += "<div class=\"label-sm\">I kategorin Produkt svarade du rätt på " + produkt + " frågor. " + produktpercent + "%</div>";
-                divTitle.InnerHtml += "<div class=\"label-sm\">I kategorin Ekonomi svarade du rätt på " + ekonomi + " frågor. " + ekonomipercent + "%</div>";
+                {
+                    divTitle.InnerHtml += "<div class=\"label-fail\">Du är tyvärr underkänd på provet.</div>";
+                    divTitle.InnerHtml += "<div class=\"label-sm-fail\">Du har svarat på " + total + " frågot och svarade rätt på " + countCorrectAnswers + " frågor. " + totalpercent + "%</div>";
+                    divTitle.InnerHtml += "<div class=\"label-sm-fail\">I kategorin Etik svarade du rätt på " + etik + " frågor. " + etikpercent + " %</div>";
+                    divTitle.InnerHtml += "<div class=\"label-sm-fail\">I kategorin Produkt svarade du rätt på " + produkt + " frågor. " + produktpercent + "%</div>";
+                    divTitle.InnerHtml += "<div class=\"label-sm-fail\">I kategorin Ekonomi svarade du rätt på " + ekonomi + " frågor. " + ekonomipercent + "%</div>";
+                }
+                
 
                 testTitle.Controls.Add(divTitle);
                 
