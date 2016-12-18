@@ -42,7 +42,7 @@ namespace kompetensportalen
             using (var reader = new StringReader(xml))
             {
                 ReadTest item = (ReadTest)ser.Deserialize(reader);
-                int total = 1;                
+                int total = 0;                
                 int countCorrectAnswers = 0; // Totalt antal rätt svar
                 int etik = 0, produkt = 0, ekonomi = 0;
                 int etikTot = 0, produktTot = 0, ekonomiTot = 0;
@@ -57,11 +57,12 @@ namespace kompetensportalen
                 {
                     div.InnerHtml += "<tr><td class=\"tdstd\"></td><td class=\"kategory tdstd\">Kategori: " + it.Kategorityp + "</td>";
                     div.InnerHtml += "<td colspan=\"2\" class=\"kategory tdstd\">frågor i kategori: " + it.Fråga.Count + "</td></tr>";
+                    int row = total + 1;
 
                     foreach (var kategori in it.Fråga)
                     {
                         div.InnerHtml += "<tr>";
-                        div.InnerHtml += "<td class=\"tdstd\">" + total + "</td>";
+                        div.InnerHtml += "<td class=\"tdstd\">" + row + "</td>";
                         div.InnerHtml += "<td class=\"tdstd\">" + kategori.Text + "</td>";
                         div.InnerHtml += "<td class=\"tdstd\">" + kategori.RättSvar + "</td>";
 
@@ -89,6 +90,7 @@ namespace kompetensportalen
                         if (it.Kategorityp == "Ekonomi")
                             ekonomiTot++;
 
+                        row++;
                         total++;                                                
                     }
                     
